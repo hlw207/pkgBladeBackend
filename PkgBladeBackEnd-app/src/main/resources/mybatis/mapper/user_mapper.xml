@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.infrastructure.persistent.dao.IUserDao">
+
+    <!-- 结果映射 -->
+    <resultMap id="UserEntityMap" type="org.example.infrastructure.persistent.po.UserPO">
+        <id property="userId" column="user_id" />
+        <result property="userKey" column="user_key" />
+        <result property="userName" column="user_name" />
+    </resultMap>
+
+    <!-- 查询用户 -->
+    <select id="queryUserEntity" resultMap="UserEntityMap">
+    SELECT user_id, user_key, user_name
+    FROM user_table
+    WHERE user_name = #{userName}
+</select>
+
+    <!-- 添加用户 -->
+    <insert id="addUserUserEntity">
+        INSERT INTO user_table (user_name, user_key)
+        VALUES (#{userName}, #{userKey})
+    </insert>
+
+
+    <!-- 更新用户 -->
+    <update id="updateUserEntity">
+        UPDATE user_table
+        SET user_key = #{userKey}
+        WHERE user_name = #{userName}
+    </update>
+
+</mapper>

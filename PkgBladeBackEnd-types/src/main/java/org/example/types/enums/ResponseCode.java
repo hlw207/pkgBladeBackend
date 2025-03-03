@@ -3,6 +3,7 @@ package org.example.types.enums;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.example.types.ResponseResult;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,5 +17,10 @@ public enum ResponseCode {
 
     private String code;
     private String info;
+
+    // 定义一个方法，接受泛型参数 data
+    public <T> ResponseResult<T> withData(T data) {
+        return new ResponseResult<>(this, data);
+    }
 
 }
