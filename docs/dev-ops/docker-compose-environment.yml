@@ -1,4 +1,5 @@
 # 命令执行 docker-compose -f docker-compose-environment.yml up -d
+# ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'gyj123456';
 version: '3.9'
 services:
   mysql:

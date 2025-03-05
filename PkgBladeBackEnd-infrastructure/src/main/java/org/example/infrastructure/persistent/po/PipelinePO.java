@@ -11,13 +11,13 @@ import org.example.types.enums.MissionSourceType;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class MissionPO {
+public class PipelinePO {
     /**
      * 任务ID
      */
     private long missionId;
     /**
-     * 任务名称
+     * 任务名称，也就是软件包名称
      */
     private String missionName;
     /**

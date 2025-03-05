@@ -12,7 +12,7 @@ import org.example.types.enums.MissionStageStatus;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class MissionStageVO {
+public class PipelineStageVO {
 
     /**
      * 阶段id

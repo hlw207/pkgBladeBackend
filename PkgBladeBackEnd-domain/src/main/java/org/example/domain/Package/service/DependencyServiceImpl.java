@@ -17,7 +17,7 @@ public class DependencyServiceImpl implements IDependencyService{
         try {
             List<String> params = new ArrayList<>();
             params.add(packageName);
-            return runPythonAsync("python3", "./docs/script/get_depend_tree", params).get().getOutput();
+            return runPythonAsync("python3", "./docs/script/get_depend_tree.py", params).get().getOutput();
         } catch (Exception e) {
             return null;
         }
