@@ -23,4 +23,8 @@ public enum ResponseCode {
         return new ResponseResult<>(this, data);
     }
 
+    public <T> ResponseResult<T> withException(String exception) {
+        return new ResponseResult<>(this, null, exception);
+    }
+
 }

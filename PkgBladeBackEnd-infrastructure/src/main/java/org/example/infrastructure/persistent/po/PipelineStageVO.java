@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 import org.example.types.enums.MissionStageName;
 import org.example.types.enums.MissionStageStatus;
 
+import java.sql.Timestamp;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -17,7 +19,7 @@ public class PipelineStageVO {
     /**
      * 阶段id
      */
-    private long missionStageId;
+    private Long missionStageId;
     /**
      * 阶段名称
      */
@@ -25,21 +27,25 @@ public class PipelineStageVO {
     /**
      * 阶段所属的任务的id
      */
-    private long missionId;
+    private Long missionId;
     /**
      * 阶段开始时间
      */
-    private long missionStageCompleteTime;
+    private Timestamp missionStageCompleteTime;
     /**
      * 阶段完成时间，没完成或者失败就是-1
      */
-    private long missionStageStartTime;
+    private Timestamp missionStageStartTime;
     /**
      * 阶段所属的层数
      */
-    private int missionStageIter;
+    private Integer missionStageIter;
     /**
      * 阶段状态
+     * FINISHED(0),
+     * NOT_STARTED(1),
+     * FAILED(2),
+     * PROCESSING(3);
      */
-    private MissionStageStatus missionStageStatus;
+    private Integer missionStageStatus;
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.example.infrastructure.persistent.dao.IPipelineDao">
+
+    <insert id="addPipeline" parameterType="org.example.infrastructure.persistent.po.PipelinePO" useGeneratedKeys="true" keyProperty="missionId">
+        INSERT INTO pipeline (
+            mission_name,
+            mission_description,
+            mission_location,
+            mission_type,
+            mission_create_time,
+            mission_owner_id
+        ) VALUES (
+                     #{pipeline.missionName},
+                     #{pipeline.missionDescription},
+                     #{pipeline.missionLocation},
+                     #{pipeline.missionType},
+                     #{pipeline.missionCreateTime},
+                     #{pipeline.missionOwnerId}
+                 )
+    </insert>
+
+</mapper>

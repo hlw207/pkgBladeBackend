@@ -38,7 +38,7 @@ public class FileController {
             File realFile = new File(finalPath);
             file.transferTo(realFile);
         } catch (Exception e) {
-            return ResponseCode.UN_ERROR.withData(null);
+            return ResponseCode.UN_ERROR.withException(e.getMessage());
         }
         return ResponseCode.SUCCESS.withData(null);
     }

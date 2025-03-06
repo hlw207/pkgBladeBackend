@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 public enum MissionSourceType {
-    EXE("可执行文件"),
-    CODE("项目源码");
-    String type;
+    EXE(0),
+    CODE(1);
+    int type;
 }

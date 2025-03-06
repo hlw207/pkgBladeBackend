@@ -1,5 +1,4 @@
-package org.example.infrastructure.persistent.po;
-
+package org.example.domain.Pipeline.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,11 +8,12 @@ import org.example.types.enums.MissionSourceType;
 
 import java.sql.Timestamp;
 
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class PipelinePO {
+public class PipelineEntity {
     /**
      * 任务ID
      */

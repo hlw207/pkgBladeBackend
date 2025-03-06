@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 public enum MissionStageStatus {
-    FINISHED("finished"),
-    NOT_STARTED("not started"),
-    FAILED("failed"),
-    PROCESSING("processing");
-    private String value;
+    FINISHED(0),
+    NOT_STARTED(1),
+    FAILED(2),
+    PROCESSING(3);
+    private int value;
 }
