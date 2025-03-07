@@ -38,7 +38,9 @@ public class PipelineService implements IPipelineService{
         PipelineEntity nowPipeline = PipelineEntity.builder().missionType(missionType).missionDescription(missionDescription)
                 .missionCreateTime(missionCreateTime).missionLocation(missionLocation).missionOwnerId(missionOwnerId)
                 .missionName(missionName).build();
-        iPipelineRepo.addPipeline(nowPipeline);
+
+        Long nowPipelineId =  iPipelineRepo.addPipeline(nowPipeline);
+        nowPipeline.setMissionId(nowPipelineId);
 
         // 提交获取所有依赖的任务
         ShowAllDependencyTask showAllDependencyTask = new ShowAllDependencyTask(iDependencyService, missionName);
@@ -46,7 +48,7 @@ public class PipelineService implements IPipelineService{
         threadPoolExecutor.execute(showAllDependencyTaskFuture);
         FutureTaskManager.addTask(missionName + "_" + missionOwnerId, showAllDependencyTaskFuture);
 
-        // TODO: 提交拉取所有依赖的任务
-
+        // 创建数据库表
+        iPipelineRepo.addPipelineStage(nowPipeline);
     }
 }

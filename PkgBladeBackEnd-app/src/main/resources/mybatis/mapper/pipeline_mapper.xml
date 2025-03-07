@@ -3,7 +3,8 @@
 
 <mapper namespace="org.example.infrastructure.persistent.dao.IPipelineDao">
 
-    <insert id="addPipeline" parameterType="org.example.infrastructure.persistent.po.PipelinePO" useGeneratedKeys="true" keyProperty="missionId">
+    <insert id="addPipeline" parameterType="org.example.infrastructure.persistent.po.PipelinePO" useGeneratedKeys="true"
+            keyProperty="missionId">
         INSERT INTO pipeline (
             mission_name,
             mission_description,
@@ -12,13 +13,35 @@
             mission_create_time,
             mission_owner_id
         ) VALUES (
-                     #{pipeline.missionName},
-                     #{pipeline.missionDescription},
-                     #{pipeline.missionLocation},
-                     #{pipeline.missionType},
-                     #{pipeline.missionCreateTime},
-                     #{pipeline.missionOwnerId}
+                     #{missionName},
+                     #{missionDescription},
+                     #{missionLocation},
+                     #{missionType},
+                     #{missionCreateTime},
+                     #{missionOwnerId}
                  )
     </insert>
+
+
+    <insert id="addPipeStage" parameterType="org.example.infrastructure.persistent.po.PipelineStagePO" useGeneratedKeys="true"
+            keyProperty="missionStageId">
+        INSERT INTO pipeline_stage (
+            mission_stage_name,
+            mission_id,
+            mission_stage_complete_time,
+            mission_stage_start_time,
+            mission_stage_iter,
+            mission_stage_status
+        ) VALUES (
+                     #{missionStageName},
+                     #{missionId},
+                     #{missionStageCompleteTime},
+                     #{missionStageStartTime},
+                     #{missionStageIter},
+                     #{missionStageStatus}
+                 )
+    </insert>
+
+
 
 </mapper>

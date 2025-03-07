@@ -11,10 +11,10 @@
 
     <!-- 查询用户 -->
     <select id="queryUserEntity" resultMap="UserEntityMap">
-    SELECT user_id, user_key, user_name
-    FROM user_table
-    WHERE user_name = #{userName}
-</select>
+        SELECT user_id, user_key, user_name
+        FROM user_table
+        WHERE user_name = #{userName}
+    </select>
 
     <!-- 添加用户 -->
     <insert id="addUserUserEntity">

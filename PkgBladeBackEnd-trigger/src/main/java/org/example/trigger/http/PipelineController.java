@@ -7,10 +7,7 @@ import org.example.types.ResponseResult;
 import org.example.types.enums.ResponseCode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -35,10 +32,10 @@ public class PipelineController {
     public ResponseResult<Boolean> createPipeline(@RequestParam String missionName,
                                                  @RequestParam String missionDescription,
                                                  @RequestParam int missionType,
-                                                 @RequestParam MultipartFile file) {
+                                                 @RequestBody MultipartFile file) {
         // 保存文件，创建信息写入数据库
         logger.info("get package:  {} {} {}", missionName, missionDescription, missionType);
-        String basePath = "./PkgBlade" + StpUtil.getLoginId();
+        String basePath = "D:/PkgBlade" + StpUtil.getLoginId();
         String datePath = new SimpleDateFormat("/yyyy_MM_dd/").format(new Date());
 
         String localDir = basePath + datePath;
@@ -58,10 +55,8 @@ public class PipelineController {
         long missionOwnerId = StpUtil.getLoginIdAsLong();
         Date date = new Date();
         Timestamp missionCreateTime = new Timestamp(date.getTime());
+        // Service内把后续的任务提交到线程池
         pipelineService.addPipeline(missionName, missionDescription, missionLocation, missionCreateTime, missionOwnerId, missionType);
-
-        // 把后续的任务提交到线程池
-        // 第一个任务就是依赖拉取
 
         return ResponseCode.SUCCESS.withData(Boolean.TRUE);
     }
