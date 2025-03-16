@@ -11,8 +11,14 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -39,8 +45,25 @@ public class PipelineController {
         long missionOwnerId = StpUtil.getLoginIdAsLong();
         // 构造项目路径
         String basePath = "D:/PkgBlade_" + String.valueOf(missionOwnerId) + "_" + missionName;
-        // TODO: 复制python文件
+        String sourceBasePath = "D:/javaProjects/PkgBladeBackEnd/docs/script";
+        List<String> toCopyFileNames = new ArrayList<>();
+        toCopyFileNames.add("compile_script.py");
+        toCopyFileNames.add("extract_symbols.py");
+        toCopyFileNames.add("find_symbols_in_code.py");
+        toCopyFileNames.add("main.py");
+        toCopyFileNames.add("get_depends.sh");
 
+        // TODO: 复制python文件
+        for (String toCopyFileName : toCopyFileNames) {
+            Path sourcePath = Paths.get(sourceBasePath +  "/" + toCopyFileName);
+            Path destinationPath = Paths.get(basePath +  "/" + toCopyFileName);
+            try {
+                Files.copy(sourcePath, destinationPath, StandardCopyOption.REPLACE_EXISTING);
+                System.out.println(toCopyFileName + " 文件复制成功！");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         String missionLocation = basePath + "/" + missionName;
         try {
