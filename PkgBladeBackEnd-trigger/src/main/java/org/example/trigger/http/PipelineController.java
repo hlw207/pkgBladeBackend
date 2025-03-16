@@ -14,6 +14,7 @@ import java.io.File;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @RestController
 @RequestMapping("/pipeline")
@@ -35,13 +36,15 @@ public class PipelineController {
                                                  @RequestBody MultipartFile file) {
         // 保存文件，创建信息写入数据库
         logger.info("get package:  {} {} {}", missionName, missionDescription, missionType);
-        String basePath = "D:/PkgBlade" + StpUtil.getLoginId();
-        String datePath = new SimpleDateFormat("/yyyy_MM_dd/").format(new Date());
+        long missionOwnerId = StpUtil.getLoginIdAsLong();
+        // 构造项目路径
+        String basePath = "D:/PkgBlade_" + String.valueOf(missionOwnerId) + "_" + missionName;
+        // TODO: 复制python文件
 
-        String localDir = basePath + datePath;
-        String missionLocation = localDir + missionName;
+
+        String missionLocation = basePath + "/" + missionName;
         try {
-            File dirFile = new File(localDir);
+            File dirFile = new File(basePath);
             if(!dirFile.exists()){
                 dirFile.mkdirs();
             }
@@ -52,12 +55,19 @@ public class PipelineController {
             return ResponseCode.UN_ERROR.withData(Boolean.FALSE);
         }
         // 获取当前登录用户的Id和流水线任务开始时间
-        long missionOwnerId = StpUtil.getLoginIdAsLong();
         Date date = new Date();
         Timestamp missionCreateTime = new Timestamp(date.getTime());
         // Service内把后续的任务提交到线程池
         pipelineService.addPipeline(missionName, missionDescription, missionLocation, missionCreateTime, missionOwnerId, missionType);
-
         return ResponseCode.SUCCESS.withData(Boolean.TRUE);
+    }
+
+    @PostMapping("/startPipeline")
+    public ResponseResult<String> startPipeline(@RequestParam List<String> handlePackageName, String missionName) {
+        logger.info("get package:  {} {} {}", handlePackageName, missionName);
+        long userId = StpUtil.getLoginIdAsLong();
+        String result = pipelineService.startPipeline(missionName, userId);
+        
+        return ResponseCode.SUCCESS.withData(result);
     }
 }

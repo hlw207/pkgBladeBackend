@@ -18,7 +18,6 @@ public class CodeExecutor {
      * @param params: 参数列表
      * @return
      */
-    // TODO: 把参数搞对。。。
     public static CompletableFuture<ProcessResult<String>> runPythonAsync(String pythonPath, String scriptPath, List<String> params) {
         return CompletableFuture.supplyAsync(() -> {
             StringBuilder output = new StringBuilder();

@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.sql.Timestamp;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.ThreadPoolExecutor;
 
@@ -31,6 +33,15 @@ public class PipelineService implements IPipelineService{
         this.iDependencyService = iDependencyService;
     }
 
+    /**
+     * 提交任务表单后，写入数据库，把依赖树获取任务写入线程池
+     * @param missionName
+     * @param missionDescription
+     * @param missionLocation
+     * @param missionCreateTime
+     * @param missionOwnerId
+     * @param missionType
+     */
     @Override
     public void addPipeline(String missionName, String missionDescription,
                             String missionLocation, Timestamp missionCreateTime,
@@ -50,5 +61,25 @@ public class PipelineService implements IPipelineService{
 
         // 创建数据库表
         iPipelineRepo.addPipelineStage(nowPipeline);
+    }
+
+    /**
+     * 在提交后能展示初步的依赖树后，正式开始任务
+     * @param missionName
+     * @param missionOwnerId
+     */
+
+    @Override
+    public String startPipeline(String missionName, long missionOwnerId) {
+        Future<String> dependencyFuture = FutureTaskManager.getTaskFuture(missionName + "_" + missionOwnerId, String.class);
+        String result = "";
+        try {
+            result = dependencyFuture.get(); // 阻塞直到任务完成并返回结果
+            System.out.println("Result: " + result);
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        return result;
     }
 }
