@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.concurrent.Callable;
 
 import static org.example.domain.Utils.CodeExecutor.runPythonAsync;
+import static org.example.domain.Utils.CodeExecutor.runPythonAsyncNoWait;
 
 public class StartMainTask implements Callable<Void> {
 
@@ -44,7 +45,7 @@ public class StartMainTask implements Callable<Void> {
         List<String> params = new ArrayList<>();
         params.add(missionName);
         params.add(" > " + basePath + outputFilePath);
-        runPythonAsync("python3", mainFilePath, params);
+        runPythonAsyncNoWait("python3", mainFilePath, params, basePath);
         return null;
     }
 }

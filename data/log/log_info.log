@@ -436,3 +436,172 @@ java.sql.SQLException: Data truncated for column 'mission_create_time' at row 1
 25-03-17.17:35:26.226 [http-nio-8091-exec-6] INFO  FileController         - get package:  [] wget {}
 25-03-17.17:36:26.540 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
 25-03-17.17:36:26.562 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-17.18:42:29.068 [main            ] INFO  Application            - Starting Application v1.0-SNAPSHOT using Java 11.0.26 on VM-16-13-ubuntu with PID 1557888 (/home/pkgBladeBackend/PkgBladeBackEnd-app/target/PkgBladeBackEnd-app.jar started by root in /home/pkgBladeBackend)
+25-03-17.18:42:29.091 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-17.18:42:31.520 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-03-17.18:42:31.534 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-03-17.18:42:31.535 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-17.18:42:31.535 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-17.18:42:31.658 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-17.18:42:31.659 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2424 ms
+25-03-17.18:42:33.292 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-03-17.18:42:33.332 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-03-17.18:42:33.348 [main            ] INFO  Application            - Started Application in 5.762 seconds (JVM running for 6.468)
+25-03-17.18:51:58.820 [main            ] INFO  Application            - Starting Application v1.0-SNAPSHOT using Java 11.0.26 on VM-16-13-ubuntu with PID 1564366 (/home/pkgBladeBackend/PkgBladeBackEnd-app/target/PkgBladeBackEnd-app.jar started by root in /home/pkgBladeBackend)
+25-03-17.18:51:58.837 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-17.18:52:00.962 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-03-17.18:52:00.974 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-03-17.18:52:00.975 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-17.18:52:00.976 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-17.18:52:01.095 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-17.18:52:01.095 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2103 ms
+25-03-17.18:52:02.565 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-03-17.18:52:02.615 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-03-17.18:52:02.642 [main            ] INFO  Application            - Started Application in 5.34 seconds (JVM running for 6.079)
+25-03-17.18:52:37.657 [http-nio-8091-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-17.18:52:37.658 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-17.18:52:37.661 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 2 ms
+25-03-17.18:52:38.132 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-17.18:52:38.706 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-17.18:52:55.752 [http-nio-8091-exec-3] INFO  FileController         - get package:  wget thisisatest 0
+25-03-17.18:52:59.291 [http-nio-8091-exec-5] INFO  FileController         - get package:  [] wget {}
+25-03-17.18:53:34.493 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-17.18:53:34.524 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-17.19:28:06.234 [main            ] INFO  Application            - Starting Application v1.0-SNAPSHOT using Java 11.0.26 on VM-16-13-ubuntu with PID 1589181 (/home/pkgBladeBackend/PkgBladeBackEnd-app/target/PkgBladeBackEnd-app.jar started by root in /home/pkgBladeBackend)
+25-03-17.19:28:06.239 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-17.19:28:08.649 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-03-17.19:28:08.663 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-03-17.19:28:08.664 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-17.19:28:08.664 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-17.19:28:08.793 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-17.19:28:08.794 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2427 ms
+25-03-17.19:28:10.376 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-03-17.19:28:10.429 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-03-17.19:28:10.462 [main            ] INFO  Application            - Started Application in 5.7 seconds (JVM running for 6.62)
+25-03-17.19:30:42.323 [http-nio-8091-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-17.19:30:42.324 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-17.19:30:42.327 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 2 ms
+25-03-17.19:30:42.742 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-17.19:30:43.491 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-17.19:30:51.607 [http-nio-8091-exec-2] INFO  FileController         - get package:  [] wget {}
+25-03-17.19:30:51.622 [http-nio-8091-exec-2] ERROR [dispatcherServlet]    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at org.example.domain.Pipeline.service.PipelineService.startPipeline(PipelineService.java:78)
+	at org.example.trigger.http.PipelineController.startPipeline(PipelineController.java:101)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at cn.dev33.satoken.filter.SaPathCheckFilterForServlet.doFilter(SaPathCheckFilterForServlet.java:55)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+25-03-17.19:31:17.668 [http-nio-8091-exec-3] INFO  FileController         - get package:  wget thisisatest 0
+25-03-17.19:31:21.962 [http-nio-8091-exec-4] INFO  FileController         - get package:  [] wget {}
+25-03-17.19:32:41.259 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-17.19:32:41.278 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-17.19:33:19.861 [main            ] INFO  Application            - Starting Application v1.0-SNAPSHOT using Java 11.0.26 on VM-16-13-ubuntu with PID 1593065 (/home/pkgBladeBackend/PkgBladeBackEnd-app/target/PkgBladeBackEnd-app.jar started by root in /home/pkgBladeBackend)
+25-03-17.19:33:19.867 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-17.19:33:22.495 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-03-17.19:33:22.508 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-03-17.19:33:22.509 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-17.19:33:22.510 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-17.19:33:22.652 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-17.19:33:22.652 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2617 ms
+25-03-17.19:33:23.935 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-03-17.19:33:23.982 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-03-17.19:33:24.002 [main            ] INFO  Application            - Started Application in 5.678 seconds (JVM running for 6.568)
+25-03-17.19:33:31.160 [http-nio-8091-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-17.19:33:31.161 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-17.19:33:31.164 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 2 ms
+25-03-17.19:33:31.522 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-17.19:33:32.153 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-17.19:33:34.679 [http-nio-8091-exec-2] INFO  FileController         - get package:  wget thisisatest 0
+25-03-17.19:33:37.299 [http-nio-8091-exec-3] INFO  FileController         - get package:  [] wget {}
+25-03-17.19:35:14.919 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-17.19:35:14.942 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-17.19:43:24.943 [main            ] INFO  Application            - Starting Application v1.0-SNAPSHOT using Java 11.0.26 on VM-16-13-ubuntu with PID 1600290 (/home/pkgBladeBackend/PkgBladeBackEnd-app/target/PkgBladeBackEnd-app.jar started by root in /home/pkgBladeBackend)
+25-03-17.19:43:24.950 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-17.19:43:27.230 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-03-17.19:43:27.244 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-03-17.19:43:27.244 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-17.19:43:27.245 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-17.19:43:27.397 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-17.19:43:27.398 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2257 ms
+25-03-17.19:43:29.285 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-03-17.19:43:29.335 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-03-17.19:43:29.365 [main            ] INFO  Application            - Started Application in 5.973 seconds (JVM running for 6.791)
+25-03-17.19:43:32.569 [http-nio-8091-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-17.19:43:32.569 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-17.19:43:32.572 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 2 ms
+25-03-17.19:43:33.029 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-17.19:43:33.633 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-17.19:43:36.258 [http-nio-8091-exec-2] INFO  FileController         - get package:  wget thisisatest 0
+25-03-17.19:43:38.419 [http-nio-8091-exec-3] INFO  FileController         - get package:  [] wget {}
+25-03-17.19:44:54.653 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-17.19:44:54.691 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-17.19:48:58.937 [main            ] INFO  Application            - Starting Application v1.0-SNAPSHOT using Java 11.0.26 on VM-16-13-ubuntu with PID 1621124 (/home/pkgBladeBackend/PkgBladeBackEnd-app/target/PkgBladeBackEnd-app.jar started by root in /home/pkgBladeBackend)
+25-03-17.19:48:58.949 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-17.19:49:01.597 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-03-17.19:49:01.612 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-03-17.19:49:01.613 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-17.19:49:01.614 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-17.19:49:01.763 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-17.19:49:01.764 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2670 ms
+25-03-17.19:49:03.416 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-03-17.19:49:03.486 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-03-17.19:49:03.513 [main            ] INFO  Application            - Started Application in 6.13 seconds (JVM running for 7.044)
+25-03-17.19:49:31.060 [http-nio-8091-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-17.19:49:31.060 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-17.19:49:31.063 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 2 ms
+25-03-17.19:49:31.516 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-17.19:49:32.292 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-17.19:49:35.500 [http-nio-8091-exec-2] INFO  FileController         - get package:  wget thisisatest 0
+25-03-17.19:49:37.745 [http-nio-8091-exec-3] INFO  FileController         - get package:  [] wget {}
+25-03-17.19:50:17.908 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-17.19:50:17.942 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

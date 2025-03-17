@@ -1,6 +1,7 @@
 package org.example.trigger.http;
 
 import cn.dev33.satoken.stp.StpUtil;
+import org.example.domain.FutureTaskManager;
 import org.example.domain.Package.service.IDependencyService;
 import org.example.domain.Pipeline.service.IPipelineService;
 import org.example.types.ResponseResult;
@@ -21,6 +22,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 @RestController
 @RequestMapping("/pipeline")
@@ -90,12 +93,24 @@ public class PipelineController {
         return ResponseCode.SUCCESS.withData(Boolean.TRUE);
     }
 
+    // TODO: 应该加一个参数是usrId
     @PostMapping("/startPipeline")
     public ResponseResult<String> startPipeline(@RequestParam List<String> handlePackageName, String missionName) {
         logger.info("get package:  {} {} {}", handlePackageName, missionName);
         long userId = StpUtil.getLoginIdAsLong();
         String result = pipelineService.startPipeline(missionName, userId);
-        
         return ResponseCode.SUCCESS.withData(result);
+    }
+
+    // TODO: 应该加一个参数是usrId
+    @PostMapping("/getPipeline")
+    public ResponseResult<String> getPipeline(@RequestParam List<String> handlePackageName, String missionName) {
+        Future<Void> mainTaskFuture = FutureTaskManager.getTaskFuture(missionName + "_" + StpUtil.getLoginId(), Void.class);
+        try {
+             mainTaskFuture.get(); // 阻塞直到任务完成并返回结果
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return ResponseCode.SUCCESS.withData("test");
     }
 }

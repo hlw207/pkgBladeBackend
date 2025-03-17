@@ -6,6 +6,7 @@ import org.example.domain.Package.service.IDependencyService;
 import org.example.domain.Pipeline.model.PipelineEntity;
 import org.example.domain.Pipeline.repository.IPipelineRepo;
 import org.example.domain.Pipeline.service.thread.ShowAllDependencyTask;
+import org.example.domain.Pipeline.service.thread.StartMainTask;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -80,6 +81,10 @@ public class PipelineService implements IPipelineService{
             e.printStackTrace();
         }
         // TODO: 提交正式运行任务
+        StartMainTask startMainTask = new StartMainTask(missionName, missionOwnerId);
+        FutureTask<Void> startMainTaskFuture = new FutureTask<>(startMainTask);
+        threadPoolExecutor.execute(startMainTaskFuture);
+        FutureTaskManager.addTask(missionName + "_" + missionOwnerId, startMainTaskFuture);
 
         return result;
     }
