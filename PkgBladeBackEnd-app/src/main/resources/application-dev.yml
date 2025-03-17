@@ -16,8 +16,9 @@ thread:
 spring:
   datasource:
     username: root
-    password: root
-    url: jdbc:mysql://127.0.0.1:3306/pkg_blade?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC&useSSL=true
+    # 太奇怪了，已经修改为gyj123456，但是连接还是要123456
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:13306/pkg_blade?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC&useSSL=true
     driver-class-name: com.mysql.cj.jdbc.Driver
   hikari:
     pool-name: Retail_HikariCP

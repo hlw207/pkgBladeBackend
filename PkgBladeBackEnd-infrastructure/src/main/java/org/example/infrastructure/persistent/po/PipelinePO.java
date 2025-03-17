@@ -15,6 +15,7 @@ import java.sql.Timestamp;
  *     mission_owner_id BIGINT COMMENT '任务所属人ID'
  * ) COMMENT='任务流水线表';
  */
+
 @Data
 @Builder
 @AllArgsConstructor
