@@ -11,6 +11,7 @@ import java.util.concurrent.Future;
 
 @RestController
 @RequestMapping("/dependency")
+@CrossOrigin(originPatterns = "*", allowCredentials = "true")
 public class DependencyController {
 
     @PostMapping("/getPackageDependency")

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
+@CrossOrigin(originPatterns = "*", allowCredentials = "true")
 public class AuthController {
 
     private final ILoginService loginService;

@@ -11,29 +11,31 @@ def get_package_dependencies(package):
     visited = {}
     parent_child_relations = []
     queue = deque([(package, 0)])  # (包名, 层级)
-    
+
     while queue:
         pkg, level = queue.popleft()
         if pkg in visited:
+            if level not in visited[pkg]:
+                visited[pkg].append(level)
             continue
-        visited[pkg] = level
-        
+        visited[pkg] = [level]
+
         try:
             output = subprocess.check_output(["apt", "show", pkg], stderr=subprocess.DEVNULL, text=True)
         except subprocess.CalledProcessError:
             continue
-        
+
         for line in output.split("\n"):
             if line.startswith("Depends:"):
                 deps = line.split("Depends:")[1].strip()
                 dependencies = [re.split(r'\s*[|,]\s*', dep)[0] for dep in deps.split(',')]
                 dependencies = [re.sub(r'\s*\(.*?\)', '', dep).strip() for dep in dependencies]
-                
+
                 for dep in dependencies:
-                    if dep and dep not in visited:
-                        queue.append((dep, level + 1))
-                        parent_child_relations.append(((pkg, level), (dep, level + 1)))
-                        
+                    # if dep and dep not in visited:
+                    queue.append((dep, level + 1))
+                    parent_child_relations.append(((pkg, level), (dep, level + 1)))
+
     return visited, parent_child_relations
 
 
@@ -47,7 +49,7 @@ if __name__ == "__main__":
     # 初始情况下只有一个依赖
     package_name = sys.argv[1]
     dependencies, relations = get_package_dependencies(package_name)
-    
+
     print(dependencies)
-    
+
     print(relations)

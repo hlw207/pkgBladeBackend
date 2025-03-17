@@ -24,6 +24,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/pipeline")
+@CrossOrigin(originPatterns = "*", allowCredentials = "true")
 public class PipelineController {
     private final IDependencyService dependencyService;
     private final IPipelineService pipelineService;

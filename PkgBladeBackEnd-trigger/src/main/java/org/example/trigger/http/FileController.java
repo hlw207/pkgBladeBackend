@@ -16,6 +16,7 @@ import java.util.Date;
 
 @Slf4j
 @RequestMapping("/file")
+@CrossOrigin(originPatterns = "*", allowCredentials = "true")
 public class FileController {
 
     private static final Logger logger = LoggerFactory.getLogger(FileController.class);
