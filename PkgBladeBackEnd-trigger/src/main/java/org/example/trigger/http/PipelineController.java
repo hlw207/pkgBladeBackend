@@ -44,8 +44,9 @@ public class PipelineController {
         logger.info("get package:  {} {} {}", missionName, missionDescription, missionType);
         long missionOwnerId = StpUtil.getLoginIdAsLong();
         // 构造项目路径
-        String basePath = "D:/PkgBlade_" + String.valueOf(missionOwnerId) + "_" + missionName;
-        String sourceBasePath = "D:/javaProjects/PkgBladeBackEnd/docs/script";
+        // 注意这是linux下的路径
+        String basePath = "/home/PkgBlade_" + String.valueOf(missionOwnerId) + "_" + missionName;
+        String sourceBasePath = "/home/PkgBlade";
         List<String> toCopyFileNames = new ArrayList<>();
         toCopyFileNames.add("compile_script.py");
         toCopyFileNames.add("extract_symbols.py");
@@ -53,7 +54,21 @@ public class PipelineController {
         toCopyFileNames.add("main.py");
         toCopyFileNames.add("get_depends.sh");
 
-        // TODO: 复制python文件
+        // 创建项目目录basePath
+        String missionLocation = basePath + "/" + missionName;
+        try {
+            File dirFile = new File(basePath);
+            if(!dirFile.exists()){
+                dirFile.mkdirs();
+            }
+            File realFile = new File(missionLocation);
+            file.transferTo(realFile);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseCode.UN_ERROR.withData(Boolean.FALSE);
+        }
+
+        // 复制python文件
         for (String toCopyFileName : toCopyFileNames) {
             Path sourcePath = Paths.get(sourceBasePath +  "/" + toCopyFileName);
             Path destinationPath = Paths.get(basePath +  "/" + toCopyFileName);
@@ -62,21 +77,10 @@ public class PipelineController {
                 System.out.println(toCopyFileName + " 文件复制成功！");
             } catch (IOException e) {
                 e.printStackTrace();
+                return ResponseCode.UN_ERROR.withData(Boolean.FALSE);
             }
         }
 
-        String missionLocation = basePath + "/" + missionName;
-        try {
-            File dirFile = new File(basePath);
-            if(!dirFile.exists()){
-                dirFile.mkdirs();
-            }
-
-            File realFile = new File(missionLocation);
-            file.transferTo(realFile);
-        } catch (Exception e) {
-            return ResponseCode.UN_ERROR.withData(Boolean.FALSE);
-        }
         // 获取当前登录用户的Id和流水线任务开始时间
         Date date = new Date();
         Timestamp missionCreateTime = new Timestamp(date.getTime());

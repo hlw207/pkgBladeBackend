@@ -17,6 +17,8 @@ public class DependencyServiceImpl implements IDependencyService{
         try {
             List<String> params = new ArrayList<>();
             params.add(packageName);
+            // 在win下是python，服务器上是python3
+            // TODO: win上不同的改成注入
             return runPythonAsync("python3", "./docs/script/get_depend_tree.py", params).get().getOutput();
         } catch (Exception e) {
             return null;
