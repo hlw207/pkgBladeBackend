@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Getter
 public enum MissionSourceType {
     EXE(0),
-    CODE(1);
+    CODE(1),
+    LINUX_PACKAGE(2);
     int type;
 }

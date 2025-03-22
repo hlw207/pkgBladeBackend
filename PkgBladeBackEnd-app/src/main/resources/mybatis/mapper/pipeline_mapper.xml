@@ -3,6 +3,17 @@
 
 <mapper namespace="org.example.infrastructure.persistent.dao.IPipelineDao">
 
+    <!-- 结果映射 -->
+    <resultMap id="pipelineMap" type="org.example.domain.Pipeline.vo.PipelineResponse">
+        <!-- 主键映射 -->
+        <id property="missionId" column="mission_id" />
+        <!-- 普通字段映射 -->
+        <result property="missionName" column="mission_name" />
+        <result property="missionDescription" column="mission_description" />
+        <result property="missionType" column="mission_type" />
+        <result property="missionCreateTime" column="mission_create_time" />
+    </resultMap>
+
     <insert id="addPipeline" parameterType="org.example.infrastructure.persistent.po.PipelinePO" useGeneratedKeys="true"
             keyProperty="missionId">
         INSERT INTO pipeline (
@@ -42,6 +53,37 @@
                  )
     </insert>
 
+    <!-- 查询用户 -->
+    <select id="getPipeline" resultMap="UserEntityMap">
+        SELECT mission_id, mission_name, mission_description, mission_type, mission_create_time
+        FROM pipeline
+        WHERE mission_owner_id = #{missionOwnerId}
+    </select>
 
+    <select id="getMissionIdByOwnerAndName" resultType="java.lang.Long">
+        SELECT mission_id
+        FROM pipeline
+        WHERE mission_owner_id = #{missionOwnerId}
+          AND mission_name = #{missionName}
+    </select>
 
+    <update id="changePipeStageStatus">
+        UPDATE pipeline_stage
+        SET mission_stage_status = #{missionStageStatus}
+        WHERE mission_id = #{missionId}
+          AND mission_stage_name = #{missionStageName}
+    </update>
+
+    <select id="getPipelineStagesByMissionId" resultType="org.example.domain.Pipeline.model.PipelineStageEntity">
+        SELECT
+            mission_stage_id AS missionStageId,
+            mission_stage_name AS missionStageName,
+            mission_id AS missionId,
+            mission_stage_complete_time AS missionStageCompleteTime,
+            mission_stage_start_time AS missionStageStartTime,
+            mission_stage_iter AS missionStageIter,
+            mission_stage_status AS missionStageStatus
+        FROM pipeline_stage
+        WHERE mission_id = #{missionId}
+    </select>
 </mapper>

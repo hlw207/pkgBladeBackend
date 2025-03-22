@@ -3,7 +3,11 @@ package org.example.trigger.http;
 import cn.dev33.satoken.stp.StpUtil;
 import org.example.domain.FutureTaskManager;
 import org.example.domain.Package.service.IDependencyService;
+import org.example.domain.Pipeline.model.PipelineEntity;
+import org.example.domain.Pipeline.model.PipelineStageEntity;
 import org.example.domain.Pipeline.service.IPipelineService;
+import org.example.domain.Pipeline.vo.PipelineInfo;
+import org.example.domain.Pipeline.vo.PipelineResponse;
 import org.example.types.ResponseResult;
 import org.example.types.enums.ResponseCode;
 import org.slf4j.Logger;
@@ -18,7 +22,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -93,9 +96,15 @@ public class PipelineController {
         return ResponseCode.SUCCESS.withData(Boolean.TRUE);
     }
 
+    @GetMapping("/getPipeline")
+    public ResponseResult<List<PipelineResponse>> getPipeline(){
+        List<PipelineResponse> pipelineResponseList = pipelineService.getPipeline(StpUtil.getLoginIdAsLong());
+        return ResponseCode.SUCCESS.withData(pipelineResponseList);
+    }
+
     // TODO: 应该加一个参数是usrId
     @PostMapping("/startPipeline")
-    public ResponseResult<String> startPipeline(@RequestParam List<String> handlePackageName, String missionName) {
+    public ResponseResult<String> startPipeline(@RequestParam List<String> handlePackageName,@RequestParam String missionName) {
         logger.info("get package:  {} {} {}", handlePackageName, missionName);
         long userId = StpUtil.getLoginIdAsLong();
         String result = pipelineService.startPipeline(missionName, userId);
@@ -103,8 +112,8 @@ public class PipelineController {
     }
 
     // TODO: 应该加一个参数是usrId
-    @PostMapping("/getPipeline")
-    public ResponseResult<String> getPipeline(@RequestParam List<String> handlePackageName, String missionName) {
+    @PostMapping("/getPipelineResult")
+    public ResponseResult<String> getPipelineResult(@RequestParam String missionName) {
         Future<Void> mainTaskFuture = FutureTaskManager.getTaskFuture(missionName + "_" + StpUtil.getLoginId(), Void.class);
         try {
              mainTaskFuture.get(); // 阻塞直到任务完成并返回结果
@@ -112,5 +121,17 @@ public class PipelineController {
             e.printStackTrace();
         }
         return ResponseCode.SUCCESS.withData("test");
+    }
+
+    @GetMapping("/getPipelineStageInfo")
+    public ResponseResult<List<PipelineStageEntity>> getPipelineStageInfo(@RequestParam String missionName){
+        List<PipelineStageEntity> pipelineStageEntityList = pipelineService.getPipelineStageInfo(StpUtil.getLoginIdAsLong(), missionName);
+        return ResponseCode.SUCCESS.withData(pipelineStageEntityList);
+    }
+
+    @GetMapping("/getPipelineStage")
+    public ResponseResult<List<PipelineInfo>> getPipelineStage(@RequestParam String missionName, @RequestParam String missionStageName, @RequestParam int lineCount){
+        List<PipelineInfo> pipelineInfoList = pipelineService.getPipeLineInfo(StpUtil.getLoginIdAsLong(), missionName, missionStageName, lineCount);
+        return ResponseCode.SUCCESS.withData(pipelineInfoList);
     }
 }

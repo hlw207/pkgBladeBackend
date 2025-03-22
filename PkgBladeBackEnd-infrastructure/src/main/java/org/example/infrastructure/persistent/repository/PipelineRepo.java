@@ -2,7 +2,9 @@ package org.example.infrastructure.persistent.repository;
 
 
 import org.example.domain.Pipeline.model.PipelineEntity;
+import org.example.domain.Pipeline.model.PipelineStageEntity;
 import org.example.domain.Pipeline.repository.IPipelineRepo;
+import org.example.domain.Pipeline.vo.PipelineResponse;
 import org.example.infrastructure.persistent.dao.IPipelineDao;
 import org.example.infrastructure.persistent.po.PipelinePO;
 import org.example.infrastructure.persistent.po.PipelineStagePO;
@@ -11,6 +13,7 @@ import org.example.types.enums.MissionStageStatus;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 
 @Repository
@@ -43,6 +46,23 @@ public class PipelineRepo implements IPipelineRepo {
 
             pipelineDao.addPipeStage(pipelineStagePO);
         }
+    }
+
+    @Override
+    public List<PipelineResponse> getPipeline(long missionOwnerId) {
+        return pipelineDao.getPipeline(missionOwnerId);
+    }
+
+    @Override
+    public void changePipeStageStatus(long missionOwnerId, String missionName, String missionStageName, int missionStageStatus) {
+        long missionId = pipelineDao.getMissionIdByOwnerAndName(missionOwnerId, missionName);
+        pipelineDao.changePipeStageStatus(missionId, missionStageName, missionStageStatus);
+    }
+
+    @Override
+    public List<PipelineStageEntity> getPipelineStagesByMissionId(long missionOwnerId, String missionName) {
+        long missionId = pipelineDao.getMissionIdByOwnerAndName(missionOwnerId, missionName);
+        return pipelineDao.getPipelineStagesByMissionId(missionId);
     }
 
 
