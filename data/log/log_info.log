@@ -1,76 +1,99 @@
-25-03-05.11:59:33.456 [main            ] INFO  Application            - Starting Application using Java 1.8.0_281 on LAPTOP-L7MF8NTH with PID 13428 (D:\javaProjects\PkgBladeBackEnd\PkgBladeBackEnd-app\target\classes started by 58398 in D:\javaProjects\PkgBladeBackEnd)
-25-03-05.11:59:33.457 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-03-05.11:59:34.962 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
-25-03-05.11:59:34.963 [main            ] INFO  AprLifecycleListener   - Loaded Apache Tomcat Native library [1.2.39] using APR version [1.7.4].
-25-03-05.11:59:34.963 [main            ] INFO  AprLifecycleListener   - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
-25-03-05.11:59:34.963 [main            ] INFO  AprLifecycleListener   - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-25-03-05.11:59:34.980 [main            ] INFO  AprLifecycleListener   - OpenSSL successfully initialized [OpenSSL 3.0.11 19 Sep 2023]
-25-03-05.11:59:34.990 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
-25-03-05.11:59:34.997 [main            ] INFO  StandardService        - Starting service [Tomcat]
-25-03-05.11:59:34.997 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-25-03-05.11:59:35.104 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-25-03-05.11:59:35.104 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1598 ms
-25-03-05.11:59:35.828 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
-25-03-05.11:59:35.856 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
-25-03-05.11:59:35.867 [main            ] INFO  Application            - Started Application in 2.844 seconds (JVM running for 3.161)
-25-03-17.17:20:51.233 [main            ] INFO  Application            - Starting Application v1.0-SNAPSHOT using Java 11.0.26 on VM-16-13-ubuntu with PID 1502704 (/home/pkgBladeBackend/PkgBladeBackEnd-app/target/PkgBladeBackEnd-app.jar started by root in /home/pkgBladeBackend)
-25-03-17.17:20:51.246 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-03-17.17:20:53.552 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
-25-03-17.17:20:53.568 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
-25-03-17.17:20:53.569 [main            ] INFO  StandardService        - Starting service [Tomcat]
-25-03-17.17:20:53.570 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-25-03-17.17:20:53.663 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-25-03-17.17:20:53.664 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2266 ms
-25-03-17.17:20:55.075 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
-25-03-17.17:20:55.148 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
-25-03-17.17:20:55.194 [main            ] INFO  Application            - Started Application in 5.344 seconds (JVM running for 6.156)
-25-03-17.17:21:00.976 [http-nio-8091-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
-25-03-17.17:21:00.977 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
-25-03-17.17:21:00.979 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 2 ms
-25-03-17.17:21:01.227 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-17.17:21:06.690 [http-nio-8091-exec-1] ERROR HikariPool             - HikariPool-1 - Exception during pool initialization.
-java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:906)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:831)
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
-	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:159)
-	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:117)
-	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
-	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80)
-	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
-	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337)
-	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
-	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
-	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
-	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+25-03-22.16:53:20.482 [main            ] INFO  Application            - Starting Application v1.0-SNAPSHOT using Java 11.0.26 on VM-16-13-ubuntu with PID 2116691 (/home/pkgBladeBackend/PkgBladeBackEnd-app/target/PkgBladeBackEnd-app.jar started by root in /home/pkgBladeBackend)
+25-03-22.16:53:20.490 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-22.16:53:22.487 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-03-22.16:53:22.500 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-03-22.16:53:22.501 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-22.16:53:22.501 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-22.16:53:22.658 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-22.16:53:22.659 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2016 ms
+25-03-22.16:53:24.082 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-03-22.16:53:24.123 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-03-22.16:53:24.147 [main            ] INFO  Application            - Started Application in 4.986 seconds (JVM running for 5.815)
+25-03-22.17:07:25.172 [http-nio-8091-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-22.17:07:25.173 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-22.17:07:25.175 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 2 ms
+25-03-22.17:07:25.302 [http-nio-8091-exec-1] INFO  FileController         - get package:  curl test the curl 2
+25-03-22.17:07:25.319 [http-nio-8091-exec-1] ERROR [dispatcherServlet]    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is cn.dev33.satoken.exception.NotLoginException: 未能读取到有效 token] with root cause
+cn.dev33.satoken.exception.NotLoginException: 未能读取到有效 token
+	at cn.dev33.satoken.exception.NotLoginException.newInstance(NotLoginException.java:134)
+	at cn.dev33.satoken.stp.StpLogic.getLoginId(StpLogic.java:963)
+	at cn.dev33.satoken.stp.StpLogic.getLoginIdAsLong(StpLogic.java:1090)
+	at cn.dev33.satoken.stp.StpUtil.getLoginIdAsLong(StpUtil.java:397)
+	at org.example.trigger.http.PipelineController.createPipeline(PipelineController.java:52)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
-	at com.sun.proxy.$Proxy71.insert(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
-	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at cn.dev33.satoken.filter.SaPathCheckFilterForServlet.doFilter(SaPathCheckFilterForServlet.java:55)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+25-03-22.17:08:09.273 [http-nio-8091-exec-2] ERROR [dispatcherServlet]    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: Result Maps collection does not contain value for org.example.infrastructure.persistent.dao.IPipelineDao.UserEntityMap] with root cause
+java.lang.IllegalArgumentException: Result Maps collection does not contain value for org.example.infrastructure.persistent.dao.IPipelineDao.UserEntityMap
+	at org.apache.ibatis.session.Configuration$StrictMap.get(Configuration.java:1031)
+	at org.apache.ibatis.session.Configuration.getResultMap(Configuration.java:740)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.getStatementResultMaps(MapperBuilderAssistant.java:394)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.addMappedStatement(MapperBuilderAssistant.java:285)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:113)
+	at org.apache.ibatis.session.Configuration.lambda$buildAllStatements$2(Configuration.java:882)
+	at java.base/java.util.Collection.removeIf(Collection.java:544)
+	at org.apache.ibatis.session.Configuration.buildAllStatements(Configuration.java:881)
+	at org.apache.ibatis.session.Configuration.hasStatement(Configuration.java:858)
+	at org.apache.ibatis.session.Configuration.hasStatement(Configuration.java:853)
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.resolveMappedStatement(MapperMethod.java:257)
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:227)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:53)
+	at org.apache.ibatis.binding.MapperProxy.lambda$cachedInvoker$0(MapperProxy.java:115)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705)
+	at org.apache.ibatis.binding.MapperProxy.cachedInvoker(MapperProxy.java:102)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
-	at com.sun.proxy.$Proxy72.addUserUserEntity(Unknown Source)
-	at org.example.infrastructure.persistent.repository.UserRepo.addUserUserEntity(UserRepo.java:24)
+	at com.sun.proxy.$Proxy72.queryUserEntity(Unknown Source)
+	at org.example.infrastructure.persistent.repository.UserRepo.queryUserEntity(UserRepo.java:18)
 	at org.example.infrastructure.persistent.repository.UserRepo$$FastClassBySpringCGLIB$$b058c6e7.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
@@ -80,9 +103,9 @@ java.sql.SQLNonTransientConnectionException: Could not create connection to data
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
-	at org.example.infrastructure.persistent.repository.UserRepo$$EnhancerBySpringCGLIB$$f222bcb4.addUserUserEntity(<generated>)
-	at org.example.domain.User.service.LoginServiceImpl.register(LoginServiceImpl.java:28)
-	at org.example.trigger.http.AuthController.register(AuthController.java:44)
+	at org.example.infrastructure.persistent.repository.UserRepo$$EnhancerBySpringCGLIB$$f222bcb4.queryUserEntity(<generated>)
+	at org.example.domain.User.service.UserServiceImpl.getUserIdByName(UserServiceImpl.java:15)
+	at org.example.trigger.http.AuthController.login(AuthController.java:35)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -136,83 +159,27 @@ java.sql.SQLNonTransientConnectionException: Could not create connection to data
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-Caused by: com.mysql.cj.exceptions.CJException: Access denied for user 'root'@'172.18.0.1' (using password: YES)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:129)
-	at com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:792)
-	at com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:717)
-	at com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:685)
-	at com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:134)
-	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:469)
-	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:174)
-	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1348)
-	at com.mysql.cj.NativeSession.connect(NativeSession.java:157)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:850)
-	... 100 common frames omitted
-25-03-17.17:21:53.009 [main            ] INFO  Application            - Starting Application v1.0-SNAPSHOT using Java 11.0.26 on VM-16-13-ubuntu with PID 1503618 (/home/pkgBladeBackend/PkgBladeBackEnd-app/target/PkgBladeBackEnd-app.jar started by root in /home/pkgBladeBackend)
-25-03-17.17:21:53.024 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-03-17.17:21:55.512 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
-25-03-17.17:21:55.529 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
-25-03-17.17:21:55.530 [main            ] INFO  StandardService        - Starting service [Tomcat]
-25-03-17.17:21:55.531 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-25-03-17.17:21:55.672 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-25-03-17.17:21:55.674 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2497 ms
-25-03-17.17:21:57.260 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
-25-03-17.17:21:57.295 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
-25-03-17.17:21:57.343 [main            ] INFO  Application            - Started Application in 5.754 seconds (JVM running for 6.512)
-25-03-17.17:24:25.135 [http-nio-8091-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
-25-03-17.17:24:25.138 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
-25-03-17.17:24:25.140 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 2 ms
-25-03-17.17:24:25.342 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-17.17:24:30.781 [http-nio-8091-exec-1] ERROR HikariPool             - HikariPool-1 - Exception during pool initialization.
-java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:906)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:831)
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
-	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:159)
-	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:117)
-	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
-	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80)
-	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
-	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337)
-	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
-	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
-	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
-	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
-	at com.sun.proxy.$Proxy71.insert(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
-	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+25-03-22.17:08:57.878 [http-nio-8091-exec-3] ERROR [dispatcherServlet]    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: Result Maps collection does not contain value for org.example.infrastructure.persistent.dao.IPipelineDao.UserEntityMap] with root cause
+java.lang.IllegalArgumentException: Result Maps collection does not contain value for org.example.infrastructure.persistent.dao.IPipelineDao.UserEntityMap
+	at org.apache.ibatis.session.Configuration$StrictMap.get(Configuration.java:1031)
+	at org.apache.ibatis.session.Configuration.getResultMap(Configuration.java:740)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.getStatementResultMaps(MapperBuilderAssistant.java:394)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.addMappedStatement(MapperBuilderAssistant.java:285)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:113)
+	at org.apache.ibatis.session.Configuration.lambda$buildAllStatements$2(Configuration.java:882)
+	at java.base/java.util.Collection.removeIf(Collection.java:544)
+	at org.apache.ibatis.session.Configuration.buildAllStatements(Configuration.java:881)
+	at org.apache.ibatis.session.Configuration.hasStatement(Configuration.java:858)
+	at org.apache.ibatis.session.Configuration.hasStatement(Configuration.java:853)
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.resolveMappedStatement(MapperMethod.java:257)
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:227)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:53)
+	at org.apache.ibatis.binding.MapperProxy.lambda$cachedInvoker$0(MapperProxy.java:115)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705)
+	at org.apache.ibatis.binding.MapperProxy.cachedInvoker(MapperProxy.java:102)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
-	at com.sun.proxy.$Proxy72.addUserUserEntity(Unknown Source)
-	at org.example.infrastructure.persistent.repository.UserRepo.addUserUserEntity(UserRepo.java:24)
+	at com.sun.proxy.$Proxy72.queryUserEntity(Unknown Source)
+	at org.example.infrastructure.persistent.repository.UserRepo.queryUserEntity(UserRepo.java:18)
 	at org.example.infrastructure.persistent.repository.UserRepo$$FastClassBySpringCGLIB$$b058c6e7.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
@@ -222,9 +189,9 @@ java.sql.SQLNonTransientConnectionException: Could not create connection to data
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
-	at org.example.infrastructure.persistent.repository.UserRepo$$EnhancerBySpringCGLIB$$f222bcb4.addUserUserEntity(<generated>)
-	at org.example.domain.User.service.LoginServiceImpl.register(LoginServiceImpl.java:28)
-	at org.example.trigger.http.AuthController.register(AuthController.java:44)
+	at org.example.infrastructure.persistent.repository.UserRepo$$EnhancerBySpringCGLIB$$f222bcb4.queryUserEntity(<generated>)
+	at org.example.domain.User.service.UserServiceImpl.getUserIdByName(UserServiceImpl.java:15)
+	at org.example.trigger.http.AuthController.login(AuthController.java:35)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -278,96 +245,42 @@ java.sql.SQLNonTransientConnectionException: Could not create connection to data
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-Caused by: com.mysql.cj.exceptions.CJException: Access denied for user 'root'@'172.18.0.1' (using password: YES)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:129)
-	at com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:792)
-	at com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:717)
-	at com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:685)
-	at com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:134)
-	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:469)
-	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:174)
-	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1348)
-	at com.mysql.cj.NativeSession.connect(NativeSession.java:157)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:850)
-	... 100 common frames omitted
-25-03-17.17:25:39.582 [main            ] INFO  Application            - Starting Application v1.0-SNAPSHOT using Java 11.0.26 on VM-16-13-ubuntu with PID 1506296 (/home/pkgBladeBackend/PkgBladeBackEnd-app/target/PkgBladeBackEnd-app.jar started by root in /home/pkgBladeBackend)
-25-03-17.17:25:39.587 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-03-17.17:25:41.941 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
-25-03-17.17:25:41.956 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
-25-03-17.17:25:41.958 [main            ] INFO  StandardService        - Starting service [Tomcat]
-25-03-17.17:25:41.958 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-25-03-17.17:25:42.091 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-25-03-17.17:25:42.092 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2353 ms
-25-03-17.17:25:43.648 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
-25-03-17.17:25:43.699 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
-25-03-17.17:25:43.727 [main            ] INFO  Application            - Started Application in 5.587 seconds (JVM running for 6.286)
-25-03-17.17:25:45.977 [http-nio-8091-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
-25-03-17.17:25:45.978 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
-25-03-17.17:25:45.980 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 1 ms
-25-03-17.17:25:46.192 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-17.17:25:46.693 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-17.17:26:48.917 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-17.17:26:48.941 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-17.17:28:48.500 [main            ] INFO  Application            - Starting Application v1.0-SNAPSHOT using Java 11.0.26 on VM-16-13-ubuntu with PID 1508726 (/home/pkgBladeBackend/PkgBladeBackEnd-app/target/PkgBladeBackEnd-app.jar started by root in /home/pkgBladeBackend)
-25-03-17.17:28:48.521 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-03-17.17:28:50.950 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
-25-03-17.17:28:50.964 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
-25-03-17.17:28:50.965 [main            ] INFO  StandardService        - Starting service [Tomcat]
-25-03-17.17:28:50.966 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-25-03-17.17:28:51.081 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-25-03-17.17:28:51.081 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2413 ms
-25-03-17.17:28:52.609 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
-25-03-17.17:28:52.635 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
-25-03-17.17:28:52.659 [main            ] INFO  Application            - Started Application in 5.442 seconds (JVM running for 6.14)
-25-03-17.17:28:56.220 [http-nio-8091-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
-25-03-17.17:28:56.222 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
-25-03-17.17:28:56.224 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 2 ms
-25-03-17.17:28:56.528 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-17.17:28:56.940 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-17.17:29:28.266 [http-nio-8091-exec-3] INFO  FileController         - get package:  wget thisisatest 0
-25-03-17.17:29:28.457 [http-nio-8091-exec-3] ERROR [dispatcherServlet]    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: 
-### Error updating database.  Cause: java.sql.SQLException: Data truncated for column 'mission_create_time' at row 1
-### The error may exist in class path resource [mybatis/mapper/pipeline_mapper.xml]
-### The error may involve org.example.infrastructure.persistent.dao.IPipelineDao.addPipeline-Inline
-### The error occurred while setting parameters
-### SQL: INSERT INTO pipeline (             mission_name,             mission_description,             mission_location,             mission_type,             mission_create_time,             mission_owner_id         ) VALUES (                      ?,                      ?,                      ?,                      ?,                      ?,                      ?                  )
-### Cause: java.sql.SQLException: Data truncated for column 'mission_create_time' at row 1
-; Data truncated for column 'mission_create_time' at row 1; nested exception is java.sql.SQLException: Data truncated for column 'mission_create_time' at row 1] with root cause
-java.sql.SQLException: Data truncated for column 'mission_create_time' at row 1
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
-	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
-	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
-	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
-	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
-	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
-	at com.sun.proxy.$Proxy71.insert(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
-	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+25-03-22.17:40:29.200 [main            ] INFO  Application            - Starting Application v1.0-SNAPSHOT using Java 11.0.26 on VM-16-13-ubuntu with PID 2937 (/home/pkgBladeBackend/PkgBladeBackEnd-app/target/PkgBladeBackEnd-app.jar started by root in /home/pkgBladeBackend)
+25-03-22.17:40:29.212 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-22.17:40:31.419 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-03-22.17:40:31.432 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-03-22.17:40:31.432 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-22.17:40:31.433 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-22.17:40:31.565 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-22.17:40:31.566 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2270 ms
+25-03-22.17:40:33.077 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-03-22.17:40:33.141 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-03-22.17:40:33.157 [main            ] INFO  Application            - Started Application in 5.197 seconds (JVM running for 5.838)
+25-03-22.17:40:36.553 [http-nio-8091-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-22.17:40:36.554 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-22.17:40:36.556 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 2 ms
+25-03-22.17:40:36.839 [http-nio-8091-exec-1] ERROR [dispatcherServlet]    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: Result Maps collection does not contain value for org.example.infrastructure.persistent.dao.IPipelineDao.UserEntityMap] with root cause
+java.lang.IllegalArgumentException: Result Maps collection does not contain value for org.example.infrastructure.persistent.dao.IPipelineDao.UserEntityMap
+	at org.apache.ibatis.session.Configuration$StrictMap.get(Configuration.java:1031)
+	at org.apache.ibatis.session.Configuration.getResultMap(Configuration.java:740)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.getStatementResultMaps(MapperBuilderAssistant.java:394)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.addMappedStatement(MapperBuilderAssistant.java:285)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:113)
+	at org.apache.ibatis.session.Configuration.lambda$buildAllStatements$2(Configuration.java:882)
+	at java.base/java.util.Collection.removeIf(Collection.java:544)
+	at org.apache.ibatis.session.Configuration.buildAllStatements(Configuration.java:881)
+	at org.apache.ibatis.session.Configuration.hasStatement(Configuration.java:858)
+	at org.apache.ibatis.session.Configuration.hasStatement(Configuration.java:853)
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.resolveMappedStatement(MapperMethod.java:257)
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:227)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:53)
+	at org.apache.ibatis.binding.MapperProxy.lambda$cachedInvoker$0(MapperProxy.java:115)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705)
+	at org.apache.ibatis.binding.MapperProxy.cachedInvoker(MapperProxy.java:102)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
-	at com.sun.proxy.$Proxy73.addPipeline(Unknown Source)
-	at org.example.infrastructure.persistent.repository.PipelineRepo.addPipeline(PipelineRepo.java:32)
-	at org.example.infrastructure.persistent.repository.PipelineRepo$$FastClassBySpringCGLIB$$142bad3e.invoke(<generated>)
+	at com.sun.proxy.$Proxy72.queryUserEntity(Unknown Source)
+	at org.example.infrastructure.persistent.repository.UserRepo.queryUserEntity(UserRepo.java:18)
+	at org.example.infrastructure.persistent.repository.UserRepo$$FastClassBySpringCGLIB$$b058c6e7.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
@@ -376,9 +289,9 @@ java.sql.SQLException: Data truncated for column 'mission_create_time' at row 1
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
-	at org.example.infrastructure.persistent.repository.PipelineRepo$$EnhancerBySpringCGLIB$$77769e19.addPipeline(<generated>)
-	at org.example.domain.Pipeline.service.PipelineService.addPipeline(PipelineService.java:53)
-	at org.example.trigger.http.PipelineController.createPipeline(PipelineController.java:89)
+	at org.example.infrastructure.persistent.repository.UserRepo$$EnhancerBySpringCGLIB$$f222bcb4.queryUserEntity(<generated>)
+	at org.example.domain.User.service.UserServiceImpl.getUserIdByName(UserServiceImpl.java:15)
+	at org.example.trigger.http.AuthController.login(AuthController.java:35)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -432,176 +345,3 @@ java.sql.SQLException: Data truncated for column 'mission_create_time' at row 1
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-25-03-17.17:34:12.331 [http-nio-8091-exec-4] INFO  FileController         - get package:  wget thisisatest 0
-25-03-17.17:35:26.226 [http-nio-8091-exec-6] INFO  FileController         - get package:  [] wget {}
-25-03-17.17:36:26.540 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-17.17:36:26.562 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-17.18:42:29.068 [main            ] INFO  Application            - Starting Application v1.0-SNAPSHOT using Java 11.0.26 on VM-16-13-ubuntu with PID 1557888 (/home/pkgBladeBackend/PkgBladeBackEnd-app/target/PkgBladeBackEnd-app.jar started by root in /home/pkgBladeBackend)
-25-03-17.18:42:29.091 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-03-17.18:42:31.520 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
-25-03-17.18:42:31.534 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
-25-03-17.18:42:31.535 [main            ] INFO  StandardService        - Starting service [Tomcat]
-25-03-17.18:42:31.535 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-25-03-17.18:42:31.658 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-25-03-17.18:42:31.659 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2424 ms
-25-03-17.18:42:33.292 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
-25-03-17.18:42:33.332 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
-25-03-17.18:42:33.348 [main            ] INFO  Application            - Started Application in 5.762 seconds (JVM running for 6.468)
-25-03-17.18:51:58.820 [main            ] INFO  Application            - Starting Application v1.0-SNAPSHOT using Java 11.0.26 on VM-16-13-ubuntu with PID 1564366 (/home/pkgBladeBackend/PkgBladeBackEnd-app/target/PkgBladeBackEnd-app.jar started by root in /home/pkgBladeBackend)
-25-03-17.18:51:58.837 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-03-17.18:52:00.962 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
-25-03-17.18:52:00.974 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
-25-03-17.18:52:00.975 [main            ] INFO  StandardService        - Starting service [Tomcat]
-25-03-17.18:52:00.976 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-25-03-17.18:52:01.095 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-25-03-17.18:52:01.095 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2103 ms
-25-03-17.18:52:02.565 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
-25-03-17.18:52:02.615 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
-25-03-17.18:52:02.642 [main            ] INFO  Application            - Started Application in 5.34 seconds (JVM running for 6.079)
-25-03-17.18:52:37.657 [http-nio-8091-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
-25-03-17.18:52:37.658 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
-25-03-17.18:52:37.661 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 2 ms
-25-03-17.18:52:38.132 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-17.18:52:38.706 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-17.18:52:55.752 [http-nio-8091-exec-3] INFO  FileController         - get package:  wget thisisatest 0
-25-03-17.18:52:59.291 [http-nio-8091-exec-5] INFO  FileController         - get package:  [] wget {}
-25-03-17.18:53:34.493 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-17.18:53:34.524 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-17.19:28:06.234 [main            ] INFO  Application            - Starting Application v1.0-SNAPSHOT using Java 11.0.26 on VM-16-13-ubuntu with PID 1589181 (/home/pkgBladeBackend/PkgBladeBackEnd-app/target/PkgBladeBackEnd-app.jar started by root in /home/pkgBladeBackend)
-25-03-17.19:28:06.239 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-03-17.19:28:08.649 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
-25-03-17.19:28:08.663 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
-25-03-17.19:28:08.664 [main            ] INFO  StandardService        - Starting service [Tomcat]
-25-03-17.19:28:08.664 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-25-03-17.19:28:08.793 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-25-03-17.19:28:08.794 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2427 ms
-25-03-17.19:28:10.376 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
-25-03-17.19:28:10.429 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
-25-03-17.19:28:10.462 [main            ] INFO  Application            - Started Application in 5.7 seconds (JVM running for 6.62)
-25-03-17.19:30:42.323 [http-nio-8091-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
-25-03-17.19:30:42.324 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
-25-03-17.19:30:42.327 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 2 ms
-25-03-17.19:30:42.742 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-17.19:30:43.491 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-17.19:30:51.607 [http-nio-8091-exec-2] INFO  FileController         - get package:  [] wget {}
-25-03-17.19:30:51.622 [http-nio-8091-exec-2] ERROR [dispatcherServlet]    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at org.example.domain.Pipeline.service.PipelineService.startPipeline(PipelineService.java:78)
-	at org.example.trigger.http.PipelineController.startPipeline(PipelineController.java:101)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at cn.dev33.satoken.filter.SaPathCheckFilterForServlet.doFilter(SaPathCheckFilterForServlet.java:55)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:829)
-25-03-17.19:31:17.668 [http-nio-8091-exec-3] INFO  FileController         - get package:  wget thisisatest 0
-25-03-17.19:31:21.962 [http-nio-8091-exec-4] INFO  FileController         - get package:  [] wget {}
-25-03-17.19:32:41.259 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-17.19:32:41.278 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-17.19:33:19.861 [main            ] INFO  Application            - Starting Application v1.0-SNAPSHOT using Java 11.0.26 on VM-16-13-ubuntu with PID 1593065 (/home/pkgBladeBackend/PkgBladeBackEnd-app/target/PkgBladeBackEnd-app.jar started by root in /home/pkgBladeBackend)
-25-03-17.19:33:19.867 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-03-17.19:33:22.495 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
-25-03-17.19:33:22.508 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
-25-03-17.19:33:22.509 [main            ] INFO  StandardService        - Starting service [Tomcat]
-25-03-17.19:33:22.510 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-25-03-17.19:33:22.652 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-25-03-17.19:33:22.652 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2617 ms
-25-03-17.19:33:23.935 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
-25-03-17.19:33:23.982 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
-25-03-17.19:33:24.002 [main            ] INFO  Application            - Started Application in 5.678 seconds (JVM running for 6.568)
-25-03-17.19:33:31.160 [http-nio-8091-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
-25-03-17.19:33:31.161 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
-25-03-17.19:33:31.164 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 2 ms
-25-03-17.19:33:31.522 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-17.19:33:32.153 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-17.19:33:34.679 [http-nio-8091-exec-2] INFO  FileController         - get package:  wget thisisatest 0
-25-03-17.19:33:37.299 [http-nio-8091-exec-3] INFO  FileController         - get package:  [] wget {}
-25-03-17.19:35:14.919 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-17.19:35:14.942 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-17.19:43:24.943 [main            ] INFO  Application            - Starting Application v1.0-SNAPSHOT using Java 11.0.26 on VM-16-13-ubuntu with PID 1600290 (/home/pkgBladeBackend/PkgBladeBackEnd-app/target/PkgBladeBackEnd-app.jar started by root in /home/pkgBladeBackend)
-25-03-17.19:43:24.950 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-03-17.19:43:27.230 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
-25-03-17.19:43:27.244 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
-25-03-17.19:43:27.244 [main            ] INFO  StandardService        - Starting service [Tomcat]
-25-03-17.19:43:27.245 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-25-03-17.19:43:27.397 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-25-03-17.19:43:27.398 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2257 ms
-25-03-17.19:43:29.285 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
-25-03-17.19:43:29.335 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
-25-03-17.19:43:29.365 [main            ] INFO  Application            - Started Application in 5.973 seconds (JVM running for 6.791)
-25-03-17.19:43:32.569 [http-nio-8091-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
-25-03-17.19:43:32.569 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
-25-03-17.19:43:32.572 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 2 ms
-25-03-17.19:43:33.029 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-17.19:43:33.633 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-17.19:43:36.258 [http-nio-8091-exec-2] INFO  FileController         - get package:  wget thisisatest 0
-25-03-17.19:43:38.419 [http-nio-8091-exec-3] INFO  FileController         - get package:  [] wget {}
-25-03-17.19:44:54.653 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-17.19:44:54.691 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-17.19:48:58.937 [main            ] INFO  Application            - Starting Application v1.0-SNAPSHOT using Java 11.0.26 on VM-16-13-ubuntu with PID 1621124 (/home/pkgBladeBackend/PkgBladeBackEnd-app/target/PkgBladeBackEnd-app.jar started by root in /home/pkgBladeBackend)
-25-03-17.19:48:58.949 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-03-17.19:49:01.597 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
-25-03-17.19:49:01.612 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
-25-03-17.19:49:01.613 [main            ] INFO  StandardService        - Starting service [Tomcat]
-25-03-17.19:49:01.614 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-25-03-17.19:49:01.763 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-25-03-17.19:49:01.764 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2670 ms
-25-03-17.19:49:03.416 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
-25-03-17.19:49:03.486 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
-25-03-17.19:49:03.513 [main            ] INFO  Application            - Started Application in 6.13 seconds (JVM running for 7.044)
-25-03-17.19:49:31.060 [http-nio-8091-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
-25-03-17.19:49:31.060 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
-25-03-17.19:49:31.063 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 2 ms
-25-03-17.19:49:31.516 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-17.19:49:32.292 [http-nio-8091-exec-1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-17.19:49:35.500 [http-nio-8091-exec-2] INFO  FileController         - get package:  wget thisisatest 0
-25-03-17.19:49:37.745 [http-nio-8091-exec-3] INFO  FileController         - get package:  [] wget {}
-25-03-17.19:50:17.908 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-17.19:50:17.942 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
