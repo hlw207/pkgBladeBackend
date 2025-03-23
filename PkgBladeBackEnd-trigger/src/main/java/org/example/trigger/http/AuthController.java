@@ -33,7 +33,7 @@ public class AuthController {
     public ResponseResult<String> login(@RequestParam String username, @RequestParam String password) {
         if (loginService.login(username, password)) {
             StpUtil.login(userService.getUserIdByName(username));
-            return ResponseCode.SUCCESS.withData("Login successful!");
+            return ResponseCode.SUCCESS.withData(StpUtil.getTokenValue());
         } else {
             return ResponseCode.SUCCESS.withData("Invalid username or password!");
         }
