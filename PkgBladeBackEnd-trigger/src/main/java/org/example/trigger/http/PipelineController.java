@@ -69,7 +69,8 @@ public class PipelineController {
                 dirFile.mkdirs();
             }
             File realFile = new File(missionLocation);
-            file.transferTo(realFile);
+            if(file != null)
+                file.transferTo(realFile);
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseCode.UN_ERROR.withData(Boolean.FALSE);
