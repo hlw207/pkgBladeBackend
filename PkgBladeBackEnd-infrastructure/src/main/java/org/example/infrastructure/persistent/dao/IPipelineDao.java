@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.example.domain.Pipeline.model.PipelineStageEntity;
 import org.example.domain.Pipeline.vo.PipelineResponse;
+import org.example.infrastructure.persistent.po.PipelineInfoPO;
 import org.example.infrastructure.persistent.po.PipelinePO;
 import org.example.infrastructure.persistent.po.PipelineStagePO;
 
@@ -15,6 +16,7 @@ public interface IPipelineDao {
 
     void addPipeline(PipelinePO pipeline);
     void addPipeStage(PipelineStagePO pipelineStage);
+    void addPipelineInfo(PipelineInfoPO pipelineInfoPO);
 
     List<PipelineResponse> getPipeline(@Param("missionOwnerId") long missionOwnerId);
 

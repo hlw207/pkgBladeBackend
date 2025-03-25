@@ -2,10 +2,12 @@ package org.example.infrastructure.persistent.repository;
 
 
 import org.example.domain.Pipeline.model.PipelineEntity;
+import org.example.domain.Pipeline.model.PipelineInfoEntity;
 import org.example.domain.Pipeline.model.PipelineStageEntity;
 import org.example.domain.Pipeline.repository.IPipelineRepo;
 import org.example.domain.Pipeline.vo.PipelineResponse;
 import org.example.infrastructure.persistent.dao.IPipelineDao;
+import org.example.infrastructure.persistent.po.PipelineInfoPO;
 import org.example.infrastructure.persistent.po.PipelinePO;
 import org.example.infrastructure.persistent.po.PipelineStagePO;
 import org.example.types.enums.MissionStageName;
@@ -46,6 +48,17 @@ public class PipelineRepo implements IPipelineRepo {
 
             pipelineDao.addPipeStage(pipelineStagePO);
         }
+    }
+
+    @Override
+    public void addPipelineInfo(PipelineInfoEntity pipelineInfoEntity) {
+        PipelineInfoPO pipelineInfoPo = PipelineInfoPO.builder().missionId(pipelineInfoEntity.getMissionId())
+                .cuttingFileNum(pipelineInfoEntity.getCuttingFileNum())
+                .cuttingFunctionNum(pipelineInfoEntity.getCuttingFunctionNum())
+                .dependency(pipelineInfoEntity.getDependency())
+                .unhandledDependency(pipelineInfoEntity.getUnhandledDependency())
+                .build();
+        pipelineDao.addPipelineInfo(pipelineInfoPo);
     }
 
     @Override

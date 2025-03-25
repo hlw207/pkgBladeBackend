@@ -4,6 +4,7 @@ package org.example.domain.Pipeline.service;
 import org.example.domain.FutureTaskManager;
 import org.example.domain.Package.service.IDependencyService;
 import org.example.domain.Pipeline.model.PipelineEntity;
+import org.example.domain.Pipeline.model.PipelineInfoEntity;
 import org.example.domain.Pipeline.model.PipelineStageEntity;
 import org.example.domain.Pipeline.repository.IPipelineRepo;
 import org.example.domain.Pipeline.service.thread.ShowAllDependencyTask;
@@ -72,6 +73,17 @@ public class PipelineService implements IPipelineService{
 
         // 创建数据库表
         iPipelineRepo.addPipelineStage(nowPipeline);
+
+        // 创建任务信息表
+        PipelineInfoEntity pipelineInfoEntity = PipelineInfoEntity.builder().missionId(nowPipelineId)
+                .cuttingFileNum(0)
+                .cuttingRate((double) 0)
+                .dependency("")
+                .unhandledDependency("").build();
+        iPipelineRepo.addPipelineInfo(pipelineInfoEntity);
+
+        // 更新任务阶段状态
+        iPipelineRepo.changePipeStageStatus(missionOwnerId, missionName, MissionStageName.GET_DEPENDENCY.toString(), 3);
     }
 
     /**
@@ -158,6 +170,8 @@ public class PipelineService implements IPipelineService{
     @Override
     public void addPipelineDependency(String missionName, long missionOwnerId, String dependency) {
         iPipelineRepo.addPipelineDependency(missionName, missionOwnerId, dependency);
+        // 更新任务阶段状态
+        iPipelineRepo.changePipeStageStatus(missionOwnerId, missionName, MissionStageName.GET_DEPENDENCY.toString(), 0);
     }
 
     @Override
