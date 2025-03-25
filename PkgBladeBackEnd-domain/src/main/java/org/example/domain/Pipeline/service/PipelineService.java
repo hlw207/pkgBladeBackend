@@ -93,7 +93,7 @@ public class PipelineService implements IPipelineService{
      */
 
     @Override
-    public String startPipeline(String missionName, long missionOwnerId) {
+    public String startPipeline(String missionName, long missionOwnerId, List<String> handlePackageName) {
         Future<String> dependencyFuture = FutureTaskManager.getTaskFuture(missionName + "_" + missionOwnerId, String.class);
         String result = "";
         try {
@@ -103,7 +103,7 @@ public class PipelineService implements IPipelineService{
             e.printStackTrace();
         }
         // TODO: 提交正式运行任务
-        StartMainTask startMainTask = new StartMainTask(missionName, missionOwnerId);
+        StartMainTask startMainTask = new StartMainTask(missionName, missionOwnerId, handlePackageName);
         FutureTask<Void> startMainTaskFuture = new FutureTask<>(startMainTask);
         threadPoolExecutor.execute(startMainTaskFuture);
         FutureTaskManager.addTask(missionName + "_" + missionOwnerId, startMainTaskFuture);

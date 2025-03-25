@@ -14,7 +14,7 @@ public interface IPipelineService {
     void addPipeline(String missionName, String missionDescription,
                              String missionLocation, Timestamp missionCreateTime,
                              long missionOwnerId, int missionType);
-    String startPipeline(String missionName, long missionOwnerId);
+    String startPipeline(String missionName, long missionOwnerId, List<String> handlePackageName);
     List<PipelineResponse> getPipeline(long missionOwnerId);
     List<PipelineInfo> getPipeLineInfo(long missionOwnerId, String missionName, String missionStageName, int lineCount);
     List<PipelineStage> getPipelineStageInfo(long missionOwnerId, String missionName);

@@ -109,7 +109,7 @@ public class PipelineController {
     public ResponseResult<String> startPipeline(@RequestParam List<String> handlePackageName,@RequestParam String missionName) {
         logger.info("get package:  {} {} {}", handlePackageName, missionName);
         long userId = StpUtil.getLoginIdAsLong();
-        String result = pipelineService.startPipeline(missionName, userId);
+        String result = pipelineService.startPipeline(missionName, userId, handlePackageName);
         return ResponseCode.SUCCESS.withData(result);
     }
 
