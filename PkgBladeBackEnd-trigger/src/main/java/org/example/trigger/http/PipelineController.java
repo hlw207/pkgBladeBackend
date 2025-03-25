@@ -8,6 +8,7 @@ import org.example.domain.Pipeline.model.PipelineStageEntity;
 import org.example.domain.Pipeline.service.IPipelineService;
 import org.example.domain.Pipeline.vo.PipelineInfo;
 import org.example.domain.Pipeline.vo.PipelineResponse;
+import org.example.domain.Pipeline.vo.PipelineStage;
 import org.example.types.ResponseResult;
 import org.example.types.enums.ResponseCode;
 import org.slf4j.Logger;
@@ -125,8 +126,8 @@ public class PipelineController {
     }
 
     @GetMapping("/getPipelineStageInfo")
-    public ResponseResult<List<PipelineStageEntity>> getPipelineStageInfo(@RequestParam String missionName){
-        List<PipelineStageEntity> pipelineStageEntityList = pipelineService.getPipelineStageInfo(StpUtil.getLoginIdAsLong(), missionName);
+    public ResponseResult<List<PipelineStage>> getPipelineStageInfo(@RequestParam String missionName){
+        List<PipelineStage> pipelineStageEntityList = pipelineService.getPipelineStageInfo(StpUtil.getLoginIdAsLong(), missionName);
         return ResponseCode.SUCCESS.withData(pipelineStageEntityList);
     }
 

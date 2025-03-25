@@ -1,9 +1,10 @@
 package org.example.domain.Pipeline.service;
 
 
-import org.example.domain.Pipeline.model.PipelineStageEntity;
+
 import org.example.domain.Pipeline.vo.PipelineInfo;
 import org.example.domain.Pipeline.vo.PipelineResponse;
+import org.example.domain.Pipeline.vo.PipelineStage;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.sql.Timestamp;
@@ -16,7 +17,7 @@ public interface IPipelineService {
     String startPipeline(String missionName, long missionOwnerId);
     List<PipelineResponse> getPipeline(long missionOwnerId);
     List<PipelineInfo> getPipeLineInfo(long missionOwnerId, String missionName, String missionStageName, int lineCount);
-    List<PipelineStageEntity> getPipelineStageInfo(long missionOwnerId, String missionName);
+    List<PipelineStage> getPipelineStageInfo(long missionOwnerId, String missionName);
     void addPipelineDependency(String missionName, long missionOwnerId, String dependency);
     String getPipelineDependency(String missionName, long missionOwnerId);
 }

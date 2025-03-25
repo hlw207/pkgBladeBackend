@@ -10,6 +10,7 @@ import org.example.domain.Pipeline.service.thread.ShowAllDependencyTask;
 import org.example.domain.Pipeline.service.thread.StartMainTask;
 import org.example.domain.Pipeline.vo.PipelineInfo;
 import org.example.domain.Pipeline.vo.PipelineResponse;
+import org.example.domain.Pipeline.vo.PipelineStage;
 import org.example.types.enums.MissionStageName;
 import org.springframework.stereotype.Service;
 
@@ -140,8 +141,18 @@ public class PipelineService implements IPipelineService{
     }
 
     @Override
-    public List<PipelineStageEntity> getPipelineStageInfo(long missionOwnerId, String missionName) {
-        return iPipelineRepo.getPipelineStagesByMissionId(missionOwnerId, missionName);
+    public List<PipelineStage> getPipelineStageInfo(long missionOwnerId, String missionName) {
+        List<PipelineStageEntity> pipelineStageEntityList = iPipelineRepo.getPipelineStagesByMissionId(missionOwnerId, missionName);
+        List<PipelineStage> pipelineStageList = new ArrayList<>();
+        for (PipelineStageEntity pipelineStageEntity: pipelineStageEntityList){
+            PipelineStage pipelineStage = new PipelineStage();
+            pipelineStage.setMissionStageName(pipelineStageEntity.getMissionStageName().toString());
+            pipelineStage.setMissionStageCompleteTime(pipelineStageEntity.getMissionStageCompleteTime());
+            pipelineStage.setMissionStageStartTime(pipelineStageEntity.getMissionStageStartTime());
+            pipelineStage.setMissionStageStatus(pipelineStageEntity.getMissionStageStatus());
+            pipelineStageList.add(pipelineStage);
+        }
+        return pipelineStageList;
     }
 
     @Override
