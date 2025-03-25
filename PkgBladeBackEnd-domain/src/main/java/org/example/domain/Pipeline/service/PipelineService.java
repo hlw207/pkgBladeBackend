@@ -144,6 +144,16 @@ public class PipelineService implements IPipelineService{
         return iPipelineRepo.getPipelineStagesByMissionId(missionOwnerId, missionName);
     }
 
+    @Override
+    public void addPipelineDependency(String missionName, long missionOwnerId, String dependency) {
+        iPipelineRepo.addPipelineDependency(missionName, missionOwnerId, dependency);
+    }
+
+    @Override
+    public String getPipelineDependency(String missionName, long missionOwnerId) {
+        return iPipelineRepo.getPipelineDependency(missionName, missionOwnerId);
+    }
+
     /**
      * 处理单行数据并转换为 PipelineInfo 对象
      *

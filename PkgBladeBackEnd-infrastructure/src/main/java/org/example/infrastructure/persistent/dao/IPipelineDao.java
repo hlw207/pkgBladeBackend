@@ -18,4 +18,6 @@ public interface IPipelineDao {
     void changePipeStageStatus(long missionId, String missionStageName, int missionStageStatus);
     Long getMissionIdByOwnerAndName(long missionOwnerId, String missionName);
     List<PipelineStageEntity> getPipelineStagesByMissionId(long missionId);
+    void addPipelineDependency(long missionId, String dependency);
+    String getPipelineDependency(long missionId);
 }

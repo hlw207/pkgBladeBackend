@@ -65,5 +65,17 @@ public class PipelineRepo implements IPipelineRepo {
         return pipelineDao.getPipelineStagesByMissionId(missionId);
     }
 
+    @Override
+    public void addPipelineDependency(String missionName, long missionOwnerId, String dependency) {
+        long missionId = pipelineDao.getMissionIdByOwnerAndName(missionOwnerId, missionName);
+        pipelineDao.addPipelineDependency(missionId, dependency);
+    }
+
+    @Override
+    public String getPipelineDependency(String missionName, long missionOwnerId) {
+        long missionId = pipelineDao.getMissionIdByOwnerAndName(missionOwnerId, missionName);
+        return pipelineDao.getPipelineDependency(missionId);
+    }
+
 
 }

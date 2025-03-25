@@ -86,4 +86,17 @@
         FROM pipeline_stage
         WHERE mission_id = #{missionId}
     </select>
+
+    <update id="addPipelineDependency">
+        UPDATE pipeline_info
+        SET dependency = #{dependency}
+        WHERE mission_id = #{missionId}
+    </update>
+
+    <select id="getPipelineDependency" resultType="java.lang.String">
+        SELECT dependency
+        FROM pipeline_info
+        WHERE mission_id = #{missionId}
+    </select>
+
 </mapper>

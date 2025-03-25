@@ -17,4 +17,6 @@ public interface IPipelineService {
     List<PipelineResponse> getPipeline(long missionOwnerId);
     List<PipelineInfo> getPipeLineInfo(long missionOwnerId, String missionName, String missionStageName, int lineCount);
     List<PipelineStageEntity> getPipelineStageInfo(long missionOwnerId, String missionName);
+    void addPipelineDependency(String missionName, long missionOwnerId, String dependency);
+    String getPipelineDependency(String missionName, long missionOwnerId);
 }

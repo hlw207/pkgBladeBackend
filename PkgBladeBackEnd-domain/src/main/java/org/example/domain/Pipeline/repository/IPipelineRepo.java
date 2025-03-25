@@ -13,5 +13,7 @@ public interface IPipelineRepo {
     List<PipelineResponse> getPipeline(long missionOwnerId);
     void changePipeStageStatus(long missionOwnerId, String missionName, String missionStageName, int missionStageStatus);
     List<PipelineStageEntity> getPipelineStagesByMissionId(long missionOwnerId, String missionName);
+    void addPipelineDependency(String missionName, long missionOwnerId, String dependency);
+    String getPipelineDependency(String missionName, long missionOwnerId);
 
 }
