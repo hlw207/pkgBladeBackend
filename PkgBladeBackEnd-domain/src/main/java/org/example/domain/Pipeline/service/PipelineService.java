@@ -108,7 +108,7 @@ public class PipelineService implements IPipelineService{
         threadPoolExecutor.execute(startMainTaskFuture);
         FutureTaskManager.addTask(missionName + "_" + missionOwnerId, startMainTaskFuture);
 
-        return result;
+        return "";
     }
 
     @Override
