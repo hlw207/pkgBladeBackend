@@ -94,14 +94,14 @@ public class PipelineService implements IPipelineService{
 
     @Override
     public String startPipeline(String missionName, long missionOwnerId, String handlePackageName) {
-        Future<String> dependencyFuture = FutureTaskManager.getTaskFuture(missionName + "_" + missionOwnerId, String.class);
-        String result = "";
-        try {
-            result = dependencyFuture.get(); // 阻塞直到任务完成并返回结果
-            System.out.println("Result: " + result);
-        } catch (InterruptedException | ExecutionException e) {
-            e.printStackTrace();
-        }
+//        Future<String> dependencyFuture = FutureTaskManager.getTaskFuture(missionName + "_" + missionOwnerId, String.class);
+//        String result = "";
+//        try {
+//            result = dependencyFuture.get(); // 阻塞直到任务完成并返回结果
+//            System.out.println("Result: " + result);
+//        } catch (InterruptedException | ExecutionException e) {
+//            e.printStackTrace();
+//        }
         // TODO: 提交正式运行任务
         StartMainTask startMainTask = new StartMainTask(missionName, missionOwnerId, handlePackageName);
         FutureTask<Void> startMainTaskFuture = new FutureTask<>(startMainTask);
