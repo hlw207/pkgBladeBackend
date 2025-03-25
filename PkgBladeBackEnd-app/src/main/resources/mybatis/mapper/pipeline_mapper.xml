@@ -34,7 +34,7 @@
     </insert>
 
 
-    <insert id="addPipeStage" parameterType="org.example.infrastructure.persistent.po.PipelineInfoPO" useGeneratedKeys="true"
+    <insert id="addPipeStage" parameterType="org.example.infrastructure.persistent.po.PipelineStagePO" useGeneratedKeys="true"
             keyProperty="missionStageId">
         INSERT INTO pipeline_stage (
             mission_stage_name,
@@ -56,17 +56,19 @@
     <insert id="addPipelineInfo" parameterType="org.example.infrastructure.persistent.po.PipelineInfoPO"
             useGeneratedKeys="true" keyProperty="missionId">
         INSERT INTO pipeline_info (
+            mission_id,
             cutting_rate,
             cutting_file_num,
             cutting_function_num,
             dependency,
             unhandled_dependency
         ) VALUES (
-                     #{pipelineInfo.cuttingRate},
-                     #{pipelineInfo.cuttingFileNum},
-                     #{pipelineInfo.cuttingFunctionNum},
-                     #{pipelineInfo.dependency},
-                     #{pipelineInfo.unhandledDependency}
+                     #{missionId},
+                     #{cuttingRate},
+                     #{cuttingFileNum},
+                     #{cuttingFunctionNum},
+                     #{dependency},
+                     #{unhandledDependency}
                  )
     </insert>
 
