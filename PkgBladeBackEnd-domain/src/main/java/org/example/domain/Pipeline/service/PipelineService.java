@@ -93,7 +93,7 @@ public class PipelineService implements IPipelineService{
      */
 
     @Override
-    public String startPipeline(String missionName, long missionOwnerId, List<String> handlePackageName) {
+    public String startPipeline(String missionName, long missionOwnerId, String handlePackageName) {
         Future<String> dependencyFuture = FutureTaskManager.getTaskFuture(missionName + "_" + missionOwnerId, String.class);
         String result = "";
         try {

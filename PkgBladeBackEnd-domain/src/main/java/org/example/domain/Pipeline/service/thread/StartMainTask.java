@@ -14,9 +14,9 @@ public class StartMainTask implements Callable<Void> {
     private final String missionName;
     private final Long userId;
 
-    private final List<String> handlePackageName;
+    private final String handlePackageName;
 
-    public StartMainTask(String missionName, Long userId, List<String> handlePackageName) {
+    public StartMainTask(String missionName, Long userId, String handlePackageName) {
         this.missionName = missionName;
         this.userId = userId;
         this.handlePackageName = handlePackageName;
@@ -48,7 +48,7 @@ public class StartMainTask implements Callable<Void> {
         List<String> params = new ArrayList<>();
         params.add(missionName);
         params.add(handlePackageName.toString());
-        System.out.println(handlePackageName.toString());
+        System.out.println(handlePackageName);
         runPythonAsyncNoWait("python3", mainFilePath, params, basePath);
         return null;
     }
