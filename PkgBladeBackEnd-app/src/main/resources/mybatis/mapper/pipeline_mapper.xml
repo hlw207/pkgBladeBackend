@@ -54,7 +54,7 @@
     </insert>
 
     <!-- 查询用户 -->
-    <select id="getPipeline" resultMap="UserEntityMap">
+    <select id="getPipeline" resultMap="pipelineMap">
         SELECT mission_id, mission_name, mission_description, mission_type, mission_create_time
         FROM pipeline
         WHERE mission_owner_id = #{missionOwnerId}
