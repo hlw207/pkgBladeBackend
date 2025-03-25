@@ -106,7 +106,7 @@ public class PipelineController {
 
     // TODO: 应该加一个参数是usrId
     @PostMapping("/startPipeline")
-    public ResponseResult<String> startPipeline(@RequestParam List<String> handlePackageName,@RequestParam String missionName) {
+    public ResponseResult<String> startPipeline(@RequestBody List<String> handlePackageName,@RequestParam String missionName) {
         logger.info("get package:  {} {} {}", handlePackageName, missionName);
         long userId = StpUtil.getLoginIdAsLong();
         String result = pipelineService.startPipeline(missionName, userId, handlePackageName);
