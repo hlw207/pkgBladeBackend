@@ -61,7 +61,8 @@ public class PipelineController {
         toCopyFileNames.add("find_symbols_in_code.py");
         toCopyFileNames.add("main.py");
         toCopyFileNames.add("output.py");
-        toCopyFileNames.add("get_depends.sh");
+        toCopyFileNames.add("get_depend.py");
+//        toCopyFileNames.add("get_depends.sh");
 
         // 创建项目目录basePath
         String missionLocation = basePath + "/" + missionName;

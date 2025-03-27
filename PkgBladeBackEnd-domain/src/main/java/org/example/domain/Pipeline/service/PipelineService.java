@@ -119,7 +119,6 @@ public class PipelineService implements IPipelineService{
 
     @Override
     public List<PipelineInfo> getPipeLineInfo(long missionOwnerId, String missionName, String missionStageName, int lineCount) {
-        processStatus(missionOwnerId, missionName);
         String basePath = "/home/PkgBlade_" + missionOwnerId + "_" + missionName;
         String filePath = basePath + "/" + missionStageName + ".txt";
         // 用于存储结果的列表
@@ -154,6 +153,7 @@ public class PipelineService implements IPipelineService{
 
     @Override
     public List<PipelineStage> getPipelineStageInfo(long missionOwnerId, String missionName) {
+        processStatus(missionOwnerId, missionName);
         List<PipelineStageEntity> pipelineStageEntityList = iPipelineRepo.getPipelineStagesByMissionId(missionOwnerId, missionName);
         List<PipelineStage> pipelineStageList = new ArrayList<>();
         for (PipelineStageEntity pipelineStageEntity: pipelineStageEntityList){
@@ -214,6 +214,7 @@ public class PipelineService implements IPipelineService{
                     String filePath = basePath + "/" + pipelineStageEntity.getMissionStageName().toString() + ".txt";
                     // TODO: 判断最后一行是否为Info: pipelineStageEntity.getMissionStageName().toString() is over，则将状态改成0，如何文件不为空，则状态改成3
                     // 读取文件最后一行
+
                     String lastLine = readLastLine(filePath);
 
                     // 判断文件内容并更新阶段状态
