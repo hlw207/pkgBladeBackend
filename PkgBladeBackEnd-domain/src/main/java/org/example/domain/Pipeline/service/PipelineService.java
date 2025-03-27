@@ -106,7 +106,7 @@ public class PipelineService implements IPipelineService{
         StartMainTask startMainTask = new StartMainTask(missionName, missionOwnerId, handlePackageName);
         FutureTask<Void> startMainTaskFuture = new FutureTask<>(startMainTask);
         threadPoolExecutor.execute(startMainTaskFuture);
-        FutureTaskManager.addTask(missionName + "_" + missionOwnerId, startMainTaskFuture);
+        FutureTaskManager.addTask(missionName + "_" + missionOwnerId + "_" + "main", startMainTaskFuture);
 
         return "";
     }
