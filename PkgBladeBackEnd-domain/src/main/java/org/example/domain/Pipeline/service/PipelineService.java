@@ -249,7 +249,7 @@ public class PipelineService implements IPipelineService{
             return lastLine;
         } catch (IOException e) {
             // 处理文件读取异常
-            e.printStackTrace();
+            System.out.println("读取文件异常: " + e.getMessage());
             return null;
         }
     }
