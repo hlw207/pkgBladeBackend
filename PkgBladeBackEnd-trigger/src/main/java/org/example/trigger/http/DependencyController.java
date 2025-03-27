@@ -29,20 +29,22 @@ public class DependencyController {
         if (future == null) {
             // 任务没有找到
             String result = pipelineService.getPipelineDependency(packageName, StpUtil.getLoginIdAsLong());
-            if(result == null) {
+            if (result == null) {
                 return ResponseCode.UN_ERROR.withException("mission not found");
-            }else
+            } else
                 return ResponseCode.SUCCESS.withData(result);
-        }
-        try {
-            String result = future.get();
-            pipelineService.addPipelineDependency(packageName, StpUtil.getLoginIdAsLong(), result);
-            return ResponseCode.SUCCESS.withData(result);
-        } catch (InterruptedException | ExecutionException e) {
-            // 任务执行失败
-            return ResponseCode.UN_ERROR.withException(e.getMessage());
-        } finally {
-            FutureTaskManager.removeTask(taskName);
+        } else {
+            try {
+                String result = future.get();
+                System.out.println(result);
+                pipelineService.addPipelineDependency(packageName, StpUtil.getLoginIdAsLong(), result);
+                return ResponseCode.SUCCESS.withData(result);
+            } catch (InterruptedException | ExecutionException e) {
+                // 任务执行失败
+                return ResponseCode.UN_ERROR.withException(e.getMessage());
+            } finally {
+                FutureTaskManager.removeTask(taskName);
+            }
         }
     }
 }
