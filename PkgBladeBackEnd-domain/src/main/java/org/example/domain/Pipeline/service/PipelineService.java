@@ -145,7 +145,6 @@ public class PipelineService implements IPipelineService{
             }
         } catch (IOException e) {
             // 处理文件读取异常
-            e.printStackTrace();
         }
 
         return pipelineInfoList;
@@ -197,6 +196,9 @@ public class PipelineService implements IPipelineService{
         } else if (line.startsWith("Command: ")) {
             pipelineInfo.setInfo(line.substring(9));
             pipelineInfo.setType("command");
+        } else {
+            pipelineInfo.setInfo(line);
+            pipelineInfo.setType("");
         }
         return pipelineInfo;
     }
@@ -249,7 +251,7 @@ public class PipelineService implements IPipelineService{
             return lastLine;
         } catch (IOException e) {
             // 处理文件读取异常
-            System.out.println("读取文件异常: " + e.getMessage());
+//            System.out.println("读取文件异常: " + e.getMessage());
             return null;
         }
     }
