@@ -47,4 +47,10 @@ public class AuthController {
             return ResponseCode.SUCCESS.withData("Invalid username or password!");
         }
     }
+
+    @PostMapping("/logout")
+    public ResponseResult<Void> logout() {
+        StpUtil.logout();
+        return ResponseCode.SUCCESS.withData(null);
+    }
 }

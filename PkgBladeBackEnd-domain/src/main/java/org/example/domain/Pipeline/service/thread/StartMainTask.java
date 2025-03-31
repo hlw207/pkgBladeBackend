@@ -25,23 +25,23 @@ public class StartMainTask implements Callable<Void> {
     @Override
     public Void call() throws Exception {
         String basePath = "/home/PkgBlade_" + String.valueOf(userId) + "_" + missionName;
-//        String outputFilePath = basePath + "/result.txt";
-//        // 检查一下输出文件是不是存在
-//        File file = new File(outputFilePath);
-//        try {
-//            if (!file.exists()) {
-//                boolean created = file.createNewFile();
-//                if (created) {
-//                    System.out.println("文件创建成功: " + outputFilePath);
-//                } else {
-//                    System.out.println("文件创建失败: " + outputFilePath);
-//                }
-//            } else {
-//                System.out.println("文件已存在: " + outputFilePath);
-//            }
-//        } catch (IOException e) {
-//            System.out.println("发生错误: " + e.getMessage());
-//        }
+        String outputFilePath = basePath + "/result.txt";
+        // 检查一下输出文件是不是存在
+        File file = new File(outputFilePath);
+        try {
+            if (!file.exists()) {
+                boolean created = file.createNewFile();
+                if (created) {
+                    System.out.println("文件创建成功: " + outputFilePath);
+                } else {
+                    System.out.println("文件创建失败: " + outputFilePath);
+                }
+            } else {
+                System.out.println("文件已存在: " + outputFilePath);
+            }
+        } catch (IOException e) {
+            System.out.println("发生错误: " + e.getMessage());
+        }
 
         String mainFilePath = basePath + "/main.py";
         // TODO: 确保main被复制，然后执行即可

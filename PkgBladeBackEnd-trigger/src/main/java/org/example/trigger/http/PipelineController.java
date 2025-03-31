@@ -100,6 +100,13 @@ public class PipelineController {
         return ResponseCode.SUCCESS.withData(Boolean.TRUE);
     }
 
+    @PostMapping("/deletePipeline")
+    public ResponseResult<Void> deletePipeline(@RequestParam String missionName){
+        long userId = StpUtil.getLoginIdAsLong();
+        pipelineService.deletePipeline(userId, missionName);
+        return ResponseCode.SUCCESS.withData(null);
+    }
+
     @GetMapping("/getPipeline")
     public ResponseResult<List<PipelineResponse>> getPipeline(){
         List<PipelineResponse> pipelineResponseList = pipelineService.getPipeline(StpUtil.getLoginIdAsLong());
@@ -138,4 +145,12 @@ public class PipelineController {
         List<PipelineInfo> pipelineInfoList = pipelineService.getPipeLineInfo(StpUtil.getLoginIdAsLong(), missionName, missionStageName, lineCount);
         return ResponseCode.SUCCESS.withData(pipelineInfoList);
     }
+
+    // TODO: 下载软件包
+
+    // TODO: 获取依赖信息
+
+    // TODO: 获取依赖包路径（包名 ＋ 路径）
+
+    // TODO： 获取修改后的包文件
 }

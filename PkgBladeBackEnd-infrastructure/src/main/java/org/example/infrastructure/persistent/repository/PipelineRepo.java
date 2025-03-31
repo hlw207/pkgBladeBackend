@@ -90,5 +90,13 @@ public class PipelineRepo implements IPipelineRepo {
         return pipelineDao.getPipelineDependency(missionId);
     }
 
+    @Override
+    public void deletePipeline(long missionOwnerId, String missionName) {
+        long missionId = pipelineDao.getMissionIdByOwnerAndName(missionOwnerId, missionName);
+        pipelineDao.deletePipeline(missionId);
+        pipelineDao.deletePipelineStage(missionId);
+        pipelineDao.deletePipelineInfo(missionId);
+    }
+
 
 }

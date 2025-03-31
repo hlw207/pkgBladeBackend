@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -176,6 +177,36 @@ public class PipelineService implements IPipelineService{
     @Override
     public String getPipelineDependency(String missionName, long missionOwnerId) {
         return iPipelineRepo.getPipelineDependency(missionName, missionOwnerId);
+    }
+
+    @Override
+    public void deletePipeline(long missionOwnerId, String missionName) {
+        iPipelineRepo.deletePipeline(missionOwnerId, missionName);
+        String basePath = "/home/PkgBlade_" + missionOwnerId + "_" + missionName;
+        // 删除任务文件夹，给出具体实现
+        File directory = new File(basePath);
+
+        if (directory.exists()) {
+            if (deleteDirectory(directory)) {
+                System.out.println("目录删除成功: " + basePath);
+            } else {
+                System.out.println("目录删除失败: " + basePath);
+            }
+        } else {
+            System.out.println("目录不存在: " + basePath);
+        }
+    }
+
+    private static boolean deleteDirectory(File directory) {
+        if (directory.isDirectory()) {
+            File[] files = directory.listFiles();
+            if (files != null) {
+                for (File file : files) {
+                    deleteDirectory(file);  // 递归删除子目录和文件
+                }
+            }
+        }
+        return directory.delete();  // 删除文件或空目录
     }
 
     /**

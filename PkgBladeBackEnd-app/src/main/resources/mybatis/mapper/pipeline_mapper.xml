@@ -118,4 +118,19 @@
         WHERE mission_id = #{missionId}
     </select>
 
+    <delete id="deletePipeline">
+        DELETE FROM pipeline
+        WHERE mission_id = #{missionId}
+    </delete>
+
+    <delete id="deletePipelineStage">
+        DELETE FROM pipeline_stage
+        WHERE mission_id = #{missionId}
+    </delete>
+
+    <delete id="deletePipelineInfo">
+        DELETE FROM pipeline_info
+        WHERE mission_id = #{missionId}
+    </delete>
+
 </mapper>

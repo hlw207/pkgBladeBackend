@@ -39,4 +39,10 @@ public interface IPipelineDao {
     );
 
     String getPipelineDependency(@Param("missionId") long missionId);
+
+    void deletePipeline(@Param("missionId") long missionId);
+
+    void deletePipelineStage(@Param("missionId") long missionId);
+
+    void deletePipelineInfo(@Param("missionId") long missionId);
 }
