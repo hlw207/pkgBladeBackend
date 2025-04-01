@@ -4,6 +4,7 @@ import cn.dev33.satoken.stp.StpUtil;
 import org.example.domain.FutureTaskManager;
 import org.example.domain.Package.service.IDependencyService;
 import org.example.domain.Pipeline.model.PipelineEntity;
+import org.example.domain.Pipeline.model.PipelineInfoEntity;
 import org.example.domain.Pipeline.model.PipelineStageEntity;
 import org.example.domain.Pipeline.service.IPipelineService;
 import org.example.domain.Pipeline.vo.PipelineInfo;
@@ -120,8 +121,8 @@ public class PipelineController {
     }
 
     @GetMapping("/getPipelineInfoDetail")
-    public ResponseResult<PipelineEntity> getPipelineInfoDetail(@RequestParam String missionName){
-        PipelineEntity pipelineEntity = pipelineService.getPipelineDetail(StpUtil.getLoginIdAsLong(), missionName);
+    public ResponseResult<PipelineInfoEntity> getPipelineInfoDetail(@RequestParam String missionName){
+        PipelineInfoEntity pipelineEntity = pipelineService.getPipelineInfoDetail(StpUtil.getLoginIdAsLong(), missionName);
         return ResponseCode.SUCCESS.withData(pipelineEntity);
     }
 
