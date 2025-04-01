@@ -119,13 +119,24 @@
     </select>
 
     <select id="getPipelineDetail" resultType="org.example.domain.Pipeline.model.PipelineEntity">
-        SELECT *
+        SELECT mission_id AS missionId,
+               mission_name AS missionName,
+               mission_description AS missionDescription,
+               mission_location AS missionLocation,
+               mission_type AS missionType,
+               mission_create_time AS missionCreateTime,
+               mission_owner_id AS missionOwnerId
         FROM pipeline
         WHERE mission_id = #{missionId}
     </select>
 
     <select id="getPipelineInfoDetail" resultType="org.example.domain.Pipeline.model.PipelineInfoEntity">
-        SELECT *
+        SELECT mission_id AS missionId,
+               cutting_rate AS cuttingRate,
+               cutting_file_num AS cuttingFileNum,
+               cutting_function_num AS cuttingFunctionNum,
+               dependency AS dependency,
+               unhandled_dependency AS unhandledDependency
         FROM pipeline_info
         WHERE mission_id = #{missionId}
     </select>
