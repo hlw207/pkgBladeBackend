@@ -2,6 +2,8 @@ package org.example.domain.Pipeline.service;
 
 
 
+import org.example.domain.Pipeline.model.PipelineEntity;
+import org.example.domain.Pipeline.model.PipelineInfoEntity;
 import org.example.domain.Pipeline.vo.PipelineInfo;
 import org.example.domain.Pipeline.vo.PipelineResponse;
 import org.example.domain.Pipeline.vo.PipelineStage;
@@ -21,4 +23,6 @@ public interface IPipelineService {
     void addPipelineDependency(String missionName, long missionOwnerId, String dependency);
     String getPipelineDependency(String missionName, long missionOwnerId);
     void deletePipeline(long missionOwnerId, String missionName);
+    PipelineEntity getPipelineDetail(long missionOwnerId, String missionName);
+    PipelineInfoEntity getPipelineInfoDetail(long missionOwnerId, String missionName);
 }

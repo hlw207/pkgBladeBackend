@@ -3,6 +3,8 @@ package org.example.infrastructure.persistent.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.example.domain.Pipeline.model.PipelineEntity;
+import org.example.domain.Pipeline.model.PipelineInfoEntity;
 import org.example.domain.Pipeline.model.PipelineStageEntity;
 import org.example.domain.Pipeline.vo.PipelineResponse;
 import org.example.infrastructure.persistent.po.PipelineInfoPO;
@@ -45,4 +47,8 @@ public interface IPipelineDao {
     void deletePipelineStage(@Param("missionId") long missionId);
 
     void deletePipelineInfo(@Param("missionId") long missionId);
+
+    PipelineEntity getPipelineDetail(@Param("missionId") long missionId);
+
+    PipelineInfoEntity getPipelineInfoDetail(@Param("missionId") long missionId);
 }

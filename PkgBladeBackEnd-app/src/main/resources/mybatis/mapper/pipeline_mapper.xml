@@ -118,6 +118,18 @@
         WHERE mission_id = #{missionId}
     </select>
 
+    <select id="getPipelineDetail" resultType="org.example.domain.Pipeline.model.PipelineEntity">
+        SELECT *
+        FROM pipeline
+        WHERE mission_id = #{missionId}
+    </select>
+
+    <select id="getPipelineInfoDetail" resultType="org.example.domain.Pipeline.model.PipelineInfoEntity">
+        SELECT *
+        FROM pipeline_info
+        WHERE mission_id = #{missionId}
+    </select>
+
     <delete id="deletePipeline">
         DELETE FROM pipeline
         WHERE mission_id = #{missionId}
@@ -132,5 +144,4 @@
         DELETE FROM pipeline_info
         WHERE mission_id = #{missionId}
     </delete>
-
 </mapper>

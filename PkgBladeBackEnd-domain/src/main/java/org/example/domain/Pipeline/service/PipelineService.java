@@ -197,6 +197,16 @@ public class PipelineService implements IPipelineService{
         }
     }
 
+    @Override
+    public PipelineEntity getPipelineDetail(long missionOwnerId, String missionName) {
+        return iPipelineRepo.getPipelineDetail(missionOwnerId, missionName);
+    }
+
+    @Override
+    public PipelineInfoEntity getPipelineInfoDetail(long missionOwnerId, String missionName) {
+        return iPipelineRepo.getPipelineInfoDetail(missionOwnerId, missionName);
+    }
+
     private static boolean deleteDirectory(File directory) {
         if (directory.isDirectory()) {
             File[] files = directory.listFiles();

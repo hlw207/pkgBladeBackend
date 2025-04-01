@@ -113,6 +113,18 @@ public class PipelineController {
         return ResponseCode.SUCCESS.withData(pipelineResponseList);
     }
 
+    @GetMapping("/getPipelineDetail")
+    public ResponseResult<PipelineEntity> getPipelineDetail(@RequestParam String missionName){
+        PipelineEntity pipelineEntity = pipelineService.getPipelineDetail(StpUtil.getLoginIdAsLong(), missionName);
+        return ResponseCode.SUCCESS.withData(pipelineEntity);
+    }
+
+    @GetMapping("/getPipelineInfoDetail")
+    public ResponseResult<PipelineEntity> getPipelineInfoDetail(@RequestParam String missionName){
+        PipelineEntity pipelineEntity = pipelineService.getPipelineDetail(StpUtil.getLoginIdAsLong(), missionName);
+        return ResponseCode.SUCCESS.withData(pipelineEntity);
+    }
+
     // TODO: 应该加一个参数是usrId
     @PostMapping("/startPipeline")
     public ResponseResult<String> startPipeline(@RequestParam String handlePackageName,@RequestParam String missionName) {

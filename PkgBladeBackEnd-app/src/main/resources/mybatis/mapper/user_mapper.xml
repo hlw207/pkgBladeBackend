@@ -22,7 +22,6 @@
         VALUES (#{userName}, #{userKey})
     </insert>
 
-
     <!-- 更新用户 -->
     <update id="updateUserEntity">
         UPDATE user_table
