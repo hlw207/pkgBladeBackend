@@ -7,16 +7,17 @@ import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
 
-/**
- * CREATE TABLE pipeline_info (
- *     mission_id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '任务ID',
- *     cutting_rate DOUBLE COMMENT '裁剪率',
- *     cutting_file_num INT COMMENT '裁剪文件数',
- *     cutting_function_num INT COMMENT '裁剪函数数',
- *     dependency TEXT COMMENT '软件包依赖',
- *     unhandled_dependency TEXT COMMENT '未处理软件包'
- * ) COMMENT='任务信息表';
- */
+
+/*  CREATE TABLE pipeline_info (
+      mission_id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '任务ID',
+      cutting_rate DOUBLE COMMENT '裁剪率',
+      cutting_file_num INT COMMENT '裁剪文件数',
+      cutting_function_num INT COMMENT '裁剪函数数',
+      dependency TEXT COMMENT '软件包依赖',
+      handled_package_name TEXT COMMENT '未处理软件包',
+      wrong_package_name TEXT COMMENT '问题软件包',
+      warning_package_name TEXT COMMENT '警告软件包'
+  ) COMMENT='任务信息表';*/
 
 @Data
 @Builder
@@ -44,7 +45,15 @@ public class PipelineInfoPO {
      */
     private String dependency;
     /**
-     * 未处理软件包
+     * 处理软件包
      */
-    private String unhandledDependency;
+    private String handledPackageName;
+    /**
+     * 问题软件包
+     */
+    private String wrongPackageName;
+    /**
+     * 警告软件包
+     */
+    private String warningPackageName;
 }

@@ -31,7 +31,15 @@ public class PipelineInfoEntity {
      */
     private String dependency;
     /**
-     * 未处理软件包
+     * 处理软件包
      */
-    private String unhandledDependency;
+    private String handledPackageName;
+    /**
+     * 问题软件包
+     */
+    private String wrongPackageName;
+    /**
+     * 警告软件包
+     */
+    private String warningPackageName;
 }

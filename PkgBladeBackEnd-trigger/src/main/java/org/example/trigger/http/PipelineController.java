@@ -7,6 +7,7 @@ import org.example.domain.Pipeline.model.PipelineEntity;
 import org.example.domain.Pipeline.model.PipelineInfoEntity;
 import org.example.domain.Pipeline.model.PipelineStageEntity;
 import org.example.domain.Pipeline.service.IPipelineService;
+import org.example.domain.Pipeline.vo.LDDInfo;
 import org.example.domain.Pipeline.vo.PipelineInfo;
 import org.example.domain.Pipeline.vo.PipelineResponse;
 import org.example.domain.Pipeline.vo.PipelineStage;
@@ -160,6 +161,25 @@ public class PipelineController {
     }
 
     // TODO: 下载软件包
+    @GetMapping("/downloadPackageLDD")
+    public ResponseResult<List<LDDInfo>> getPackageLDD(@RequestParam String missionName){
+        List<PipelineStage> pipelineStageEntityList = pipelineService.getPipelineStageInfo(StpUtil.getLoginIdAsLong(), missionName);
+        if(pipelineStageEntityList.get(3).getMissionStageStatus() != 0){
+            return ResponseCode.UN_ERROR.withException("裁剪未完成");
+        }
+        List<LDDInfo> lddInfoList = pipelineService.getLDDInfo(StpUtil.getLoginIdAsLong(), missionName);
+        return ResponseCode.SUCCESS.withData(lddInfoList);
+    }
+
+    @GetMapping("/downloadPackage")
+    public ResponseResult<List<String>> getPackageDownload(@RequestParam String missionName){
+        List<PipelineStage> pipelineStageEntityList = pipelineService.getPipelineStageInfo(StpUtil.getLoginIdAsLong(), missionName);
+        if(pipelineStageEntityList.get(3).getMissionStageStatus() != 0){
+            return ResponseCode.UN_ERROR.withException("裁剪未完成");
+        }
+        List<String> packageList = pipelineService.getPackage(StpUtil.getLoginIdAsLong(), missionName);
+        return ResponseCode.SUCCESS.withData(packageList);
+    }
 
     // TODO: 获取依赖信息
 

@@ -40,6 +40,17 @@ public interface IPipelineDao {
             @Param("dependency") String dependency
     );
 
+    void addPipelineHandledPackageName(
+            @Param("missionId") long missionId,
+            @Param("handledPackageName") String handledPackageName
+    );
+
+    void addPipelineWrongAndWarningPackageName(
+            @Param("missionId") long missionId,
+            @Param("wrongPackageName") String wrongPackageName,
+            @Param("warningPackageName") String warningPackageName
+    );
+
     String getPipelineDependency(@Param("missionId") long missionId);
 
     void deletePipeline(@Param("missionId") long missionId);

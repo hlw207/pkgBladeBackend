@@ -56,7 +56,9 @@ public class PipelineRepo implements IPipelineRepo {
                 .cuttingFileNum(pipelineInfoEntity.getCuttingFileNum())
                 .cuttingFunctionNum(pipelineInfoEntity.getCuttingFunctionNum())
                 .dependency(pipelineInfoEntity.getDependency())
-                .unhandledDependency(pipelineInfoEntity.getUnhandledDependency())
+                .handledPackageName(pipelineInfoEntity.getHandledPackageName())
+                .wrongPackageName(pipelineInfoEntity.getWrongPackageName())
+                .warningPackageName(pipelineInfoEntity.getWarningPackageName())
                 .build();
         pipelineDao.addPipelineInfo(pipelineInfoPo);
     }
@@ -82,6 +84,18 @@ public class PipelineRepo implements IPipelineRepo {
     public void addPipelineDependency(String missionName, long missionOwnerId, String dependency) {
         long missionId = pipelineDao.getMissionIdByOwnerAndName(missionOwnerId, missionName);
         pipelineDao.addPipelineDependency(missionId, dependency);
+    }
+
+    @Override
+    public void addPipelineHandledPackageName(String missionName, long missionOwnerId, String handledPackageName) {
+        long missionId = pipelineDao.getMissionIdByOwnerAndName(missionOwnerId, missionName);
+        pipelineDao.addPipelineHandledPackageName(missionId, handledPackageName);
+    }
+
+    @Override
+    public void addPipelineWrongAndWarningPackageName(String missionName, long missionOwnerId, String wrongPackageName, String warningPackageName) {
+        long missionId = pipelineDao.getMissionIdByOwnerAndName(missionOwnerId, missionName);
+        pipelineDao.addPipelineWrongAndWarningPackageName(missionId, wrongPackageName, warningPackageName);
     }
 
     @Override

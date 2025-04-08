@@ -9,6 +9,7 @@ import org.example.domain.Pipeline.model.PipelineStageEntity;
 import org.example.domain.Pipeline.repository.IPipelineRepo;
 import org.example.domain.Pipeline.service.thread.ShowAllDependencyTask;
 import org.example.domain.Pipeline.service.thread.StartMainTask;
+import org.example.domain.Pipeline.vo.LDDInfo;
 import org.example.domain.Pipeline.vo.PipelineInfo;
 import org.example.domain.Pipeline.vo.PipelineResponse;
 import org.example.domain.Pipeline.vo.PipelineStage;
@@ -16,10 +17,7 @@ import org.example.types.enums.MissionStageName;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
@@ -80,7 +78,9 @@ public class PipelineService implements IPipelineService{
                 .cuttingFileNum(0)
                 .cuttingRate((double) 0)
                 .dependency("")
-                .unhandledDependency("").build();
+                .handledPackageName("")
+                .wrongPackageName("")
+                .warningPackageName("").build();
         iPipelineRepo.addPipelineInfo(pipelineInfoEntity);
 
         // 更新任务阶段状态
@@ -108,7 +108,8 @@ public class PipelineService implements IPipelineService{
         FutureTask<Void> startMainTaskFuture = new FutureTask<>(startMainTask);
         threadPoolExecutor.execute(startMainTaskFuture);
         FutureTaskManager.addTask(missionName + "_" + missionOwnerId + "_" + "main", startMainTaskFuture);
-
+        System.out.println(handlePackageName);
+        iPipelineRepo.addPipelineHandledPackageName(missionName, missionOwnerId, handlePackageName);
         return "";
     }
 
@@ -205,6 +206,48 @@ public class PipelineService implements IPipelineService{
     @Override
     public PipelineInfoEntity getPipelineInfoDetail(long missionOwnerId, String missionName) {
         return iPipelineRepo.getPipelineInfoDetail(missionOwnerId, missionName);
+    }
+
+    @Override
+    public List<LDDInfo> getLDDInfo(long missionOwnerId, String missionName) {
+        String basePath = "/home/PkgBlade_" + String.valueOf(missionOwnerId) + "_" + missionName;
+        String targetFilePath = basePath + "/" + missionName;
+        List<LDDInfo> result = new ArrayList<>();
+
+        try {
+            ProcessBuilder pb = new ProcessBuilder("ldd", targetFilePath);
+            pb.redirectErrorStream(true); // 合并标准错误流到标准输出流
+            Process process = pb.start();
+
+            // 读取命令输出
+            try (BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(process.getInputStream()))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    String info = line.trim();
+                    String type = "necessary";
+                    result.add(new LDDInfo(info, type));
+                }
+            }
+
+            // 等待命令执行完成
+            int exitCode = process.waitFor();
+            if (exitCode != 0) {
+                // 可根据需求抛出异常或记录日志
+                throw new RuntimeException("ldd命令执行失败，退出码：" + exitCode);
+            }
+
+        } catch (IOException | InterruptedException e) {
+            // 处理异常，例如记录日志或抛出运行时异常
+            throw new RuntimeException("无法获取LDD信息: " + e.getMessage(), e);
+        }
+
+        return result;
+    }
+
+    @Override
+    public List<String> getPackage(long missionOwnerId, String missionName) {
+        return null;
     }
 
     private static boolean deleteDirectory(File directory) {

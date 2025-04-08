@@ -61,14 +61,18 @@
             cutting_file_num,
             cutting_function_num,
             dependency,
-            unhandled_dependency
+            handled_package_name,
+            wrong_package_name,
+            warning_package_name
         ) VALUES (
                      #{missionId},
                      #{cuttingRate},
                      #{cuttingFileNum},
                      #{cuttingFunctionNum},
                      #{dependency},
-                     #{unhandledDependency}
+                     #{handledPackageName},
+                     #{wrongPackageName},
+                     #{warningPackageName}
                  )
     </insert>
 
@@ -112,6 +116,19 @@
         WHERE mission_id = #{missionId}
     </update>
 
+    <update id="addPipelineHandledPackageName">
+        UPDATE pipeline_info
+        SET handled_package_name = #{handledPackageName}
+        WHERE mission_id = #{missionId}
+    </update>
+
+    <update id="addPipelineWrongAndWarningPackageName">
+        UPDATE pipeline_info
+        SET wrong_package_name = #{wrongPackageName}
+        AND warning_package_name = #{warningPackageName}
+        WHERE mission_id = #{missionId}
+    </update>
+
     <select id="getPipelineDependency" resultType="java.lang.String">
         SELECT dependency
         FROM pipeline_info
@@ -136,7 +153,9 @@
                cutting_file_num AS cuttingFileNum,
                cutting_function_num AS cuttingFunctionNum,
                dependency AS dependency,
-               unhandled_dependency AS unhandledDependency
+               handled_package_name AS handledPackageName,
+               wrong_package_name AS wrongPackageName,
+               warning_package_name AS warningPackageName
         FROM pipeline_info
         WHERE mission_id = #{missionId}
     </select>
