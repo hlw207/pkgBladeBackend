@@ -189,13 +189,12 @@ public class PipelineController {
 
     @GetMapping("/downloadFile")
     public ResponseEntity<Resource> downloadFile(
-            @RequestParam long missionOwnerId,
             @RequestParam String missionName,
             @RequestParam String fileName,
             HttpServletRequest request) {
 
         // 1. 构建文件路径（需做安全校验）
-        String basePath = "/home/PkgBlade_" + missionOwnerId + "_" + missionName;
+        String basePath = "/home/PkgBlade_" + StpUtil.getLoginIdAsLong() + "_" + missionName;
         String filePath = basePath + "/libresults/" + fileName;
 
         // 2. 防止路径遍历攻击（关键安全步骤！）
