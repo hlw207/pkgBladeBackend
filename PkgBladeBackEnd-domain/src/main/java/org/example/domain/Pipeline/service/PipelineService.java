@@ -247,7 +247,25 @@ public class PipelineService implements IPipelineService{
 
     @Override
     public List<String> getPackage(long missionOwnerId, String missionName) {
-        return null;
+        String basePath = "/home/PkgBlade_" + String.valueOf(missionOwnerId) + "_" + missionName;
+        String targetPath = basePath + "/libresults";
+
+        List<String> fileNames = new ArrayList<>();
+
+        File directory = new File(targetPath);
+        if (!directory.exists() || !directory.isDirectory()) {
+            return fileNames;
+        }
+
+        File[] files = directory.listFiles();
+
+        for (File file : files) {
+            if (file.isFile()) {
+                fileNames.add(file.getName());
+            }
+        }
+
+        return fileNames;
     }
 
     private static boolean deleteDirectory(File directory) {
