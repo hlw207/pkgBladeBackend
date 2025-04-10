@@ -226,6 +226,12 @@ public class PipelineService implements IPipelineService{
                 while ((line = reader.readLine()) != null) {
                     String info = line.trim();
                     String type = "necessary";
+                    if(!info.contains("=>")){
+                        type = "unnecessary";
+                    }
+                    if(info.startsWith("lib") && info.charAt(4) == '.'){
+                        type = "unnecessary";
+                    }
                     result.add(new LDDInfo(info, type));
                 }
             }
