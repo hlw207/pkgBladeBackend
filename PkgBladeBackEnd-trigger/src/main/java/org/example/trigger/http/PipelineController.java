@@ -16,10 +16,14 @@ import org.example.types.enums.ResponseCode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.FileSystemResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.core.io.Resource;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -184,29 +188,38 @@ public class PipelineController {
     }
 
     @GetMapping("/downloadFile")
-    public ResponseResult<Resource> downloadFile(@RequestParam String missionName, @RequestParam String fileName) {
+    public ResponseEntity<Resource> downloadFile(
+            @RequestParam long missionOwnerId,
+            @RequestParam String missionName,
+            @RequestParam String fileName,
+            HttpServletRequest request) {
 
         // 1. 构建文件路径（需做安全校验）
-        String basePath = "/home/PkgBlade_" + StpUtil.getLoginIdAsLong() + "_" + missionName;
+        String basePath = "/home/PkgBlade_" + missionOwnerId + "_" + missionName;
         String filePath = basePath + "/libresults/" + fileName;
 
         // 2. 防止路径遍历攻击（关键安全步骤！）
         Path normalizedPath = Paths.get(filePath).normalize();
         if (!normalizedPath.startsWith(basePath)) {
-            return ResponseCode.UN_ERROR.withException("Invalid file path");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
 
         // 3. 加载文件
         File file = new File(filePath);
         if (!file.exists()) {
-            return ResponseCode.UN_ERROR.withException("Invalid file path");
+            return ResponseEntity.notFound().build();
         }
 
-        System.out.println(file.getName());
         // 4. 将文件包装为 Resource 对象
         Resource resource = new FileSystemResource(file);
 
-        return ResponseCode.SUCCESS.withData(resource);
+        // 5. 设置响应头（强制下载）
+        String contentType = "application/octet-stream";
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_TYPE, contentType)
+                .header(HttpHeaders.CONTENT_DISPOSITION,
+                        "attachment; filename=\"" + file.getName() + "\"")
+                .body(resource);
     }
 
     // TODO: 获取依赖信息
