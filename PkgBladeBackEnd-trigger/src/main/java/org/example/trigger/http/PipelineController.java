@@ -202,6 +202,7 @@ public class PipelineController {
             return ResponseCode.UN_ERROR.withException("Invalid file path");
         }
 
+        System.out.println(file.getName());
         // 4. 将文件包装为 Resource 对象
         Resource resource = new FileSystemResource(file);
 
