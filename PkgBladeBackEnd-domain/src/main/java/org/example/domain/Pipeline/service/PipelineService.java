@@ -257,7 +257,11 @@ public class PipelineService implements IPipelineService{
             return fileNames;
         }
 
+        System.out.println("enter here");
+
         File[] files = directory.listFiles();
+
+        System.out.println(fileNames.size());
 
         for (File file : files) {
             if (file.isFile()) {
