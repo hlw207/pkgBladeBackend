@@ -15,8 +15,10 @@ import org.example.types.ResponseResult;
 import org.example.types.enums.ResponseCode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.core.io.Resource;
 
 import java.io.File;
 import java.io.IOException;
@@ -179,6 +181,31 @@ public class PipelineController {
         }
         List<String> packageList = pipelineService.getPackage(StpUtil.getLoginIdAsLong(), missionName);
         return ResponseCode.SUCCESS.withData(packageList);
+    }
+
+    @GetMapping("/downloadFile")
+    public ResponseResult<Resource> downloadFile(@RequestParam String missionName, @RequestParam String fileName) {
+
+        // 1. 构建文件路径（需做安全校验）
+        String basePath = "/home/PkgBlade_" + StpUtil.getLoginIdAsLong() + "_" + missionName;
+        String filePath = basePath + "/libresults/" + fileName;
+
+        // 2. 防止路径遍历攻击（关键安全步骤！）
+        Path normalizedPath = Paths.get(filePath).normalize();
+        if (!normalizedPath.startsWith(basePath)) {
+            return ResponseCode.UN_ERROR.withException("Invalid file path");
+        }
+
+        // 3. 加载文件
+        File file = new File(filePath);
+        if (!file.exists()) {
+            return ResponseCode.UN_ERROR.withException("Invalid file path");
+        }
+
+        // 4. 将文件包装为 Resource 对象
+        Resource resource = new FileSystemResource(file);
+
+        return ResponseCode.SUCCESS.withData(resource);
     }
 
     // TODO: 获取依赖信息
